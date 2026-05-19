@@ -11,8 +11,6 @@ ENDPOINTS = [
     "adverse-reactions",
     "drug-description",
     "indications",
-    "geriatric-use",
-    "pediatric-use",
     "pregnancy-use",
     "specific-populations",
     "products",
@@ -134,3 +132,65 @@ async def test_label_rich_structure(client, valid_drug_id):
     assert "text" in data
     assert "table" in data
     assert "subsections" in data
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("age,expected_category", [
+    (5, "pediatric"),
+    (0, "pediatric"),
+    (17, "pediatric"),
+    (35, "adult"),
+    (18, "adult"),
+    (64, "adult"),
+    (65, "geriatric"),
+    (80, "geriatric"),
+])
+async def test_population_info_categories(client, valid_drug_id, age, expected_category):
+    resp = await client.get(
+        f"/api/v1/drug/{valid_drug_id}/population-info?age={age}",
+        headers={"X-API-Key": API_KEY},
+    )
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["success"] is True
+    data = body["data"]
+    assert data["population_category"] == expected_category
+    assert data["age"] == age
+    assert "text" in data
+    assert "table" in data
+    assert "subsections" in data
+
+
+@pytest.mark.asyncio
+async def test_population_info_invalid_drug(client, invalid_drug_id):
+    resp = await client.get(
+        f"/api/v1/drug/{invalid_drug_id}/population-info?age=35",
+        headers={"X-API-Key": API_KEY},
+    )
+    assert resp.status_code == 404
+    assert resp.json()["error_code"] == "DRUG_NOT_FOUND"
+
+
+@pytest.mark.asyncio
+async def test_population_info_missing_age(client, valid_drug_id):
+    resp = await client.get(
+        f"/api/v1/drug/{valid_drug_id}/population-info",
+        headers={"X-API-Key": API_KEY},
+    )
+    assert resp.status_code == 422
+
+
+@pytest.mark.asyncio
+async def test_population_info_age_out_of_range(client, valid_drug_id):
+    resp = await client.get(
+        f"/api/v1/drug/{valid_drug_id}/population-info?age=150",
+        headers={"X-API-Key": API_KEY},
+    )
+    assert resp.status_code == 422
+    assert resp.json()["error_code"] == "INVALID_AGE"
+
+
+@pytest.mark.asyncio
+async def test_population_info_no_api_key(client, valid_drug_id):
+    resp = await client.get(f"/api/v1/drug/{valid_drug_id}/population-info?age=35")
+    assert resp.status_code == 401

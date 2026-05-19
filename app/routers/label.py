@@ -1,13 +1,13 @@
 import time
 import structlog
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Query
 from fastapi.responses import JSONResponse
 from app.db import get_pool
 from app.cache import get_cached, set_cached, build_key
 from app.config import settings
 from app.services.resolver import resolve_drug
 from app.services import label as label_svc
-from app.models.responses import DrugResponse, MetaResponse, ErrorResponse
+from app.models.responses import DrugResponse, MetaResponse, ErrorResponse, PopulationInfoData
 from app.exceptions import DrugNotFoundException, NoFormulationException, NoLabelDataException
 
 router = APIRouter(tags=["label"])
@@ -147,17 +147,69 @@ async def get_indications(drug_id_1mg: str, request: Request):
     )
 
 
-@router.get("/drug/{drug_id_1mg}/geriatric-use")
-async def get_geriatric_use(drug_id_1mg: str, request: Request):
-    return await _label_endpoint(
-        drug_id_1mg, "geriatric_use", label_svc.get_geriatric_use, request
+@router.get("/drug/{drug_id_1mg}/population-info")
+async def get_population_info(
+    drug_id_1mg: str,
+    request: Request,
+    age: int = Query(..., description="Patient age in years (0–120)"),
+):
+    if age < 0 or age > 120:
+        return JSONResponse(
+            status_code=422,
+            content=ErrorResponse(
+                error_code="INVALID_AGE",
+                message="age must be between 0 and 120",
+                request_id=str(id(request)),
+            ).model_dump(),
+        )
+
+    if age < 18:
+        age_category = "pediatric"
+    elif age >= 65:
+        age_category = "geriatric"
+    else:
+        age_category = "adult"
+
+    start = time.perf_counter()
+    pool = get_pool()
+
+    try:
+        resolved = await resolve_drug(drug_id_1mg, pool)
+    except DrugNotFoundException as e:
+        return JSONResponse(status_code=404, content=ErrorResponse(error_code=e.error_code, message=e.message, request_id=str(id(request))).model_dump())
+    except NoFormulationException as e:
+        return JSONResponse(status_code=404, content=ErrorResponse(error_code=e.error_code, message=e.message, request_id=str(id(request))).model_dump())
+    except NoLabelDataException as e:
+        return JSONResponse(status_code=404, content=ErrorResponse(error_code=e.error_code, message=e.message, request_id=str(id(request))).model_dump())
+    except Exception as e:
+        logger.error("label_endpoint_error", endpoint="population_info", error=str(e), exc_info=True)
+        return JSONResponse(status_code=500, content=ErrorResponse(error_code="DB_ERROR", message=str(e), request_id=str(id(request))).model_dump())
+
+    cache_key = build_key("label", "population_info", resolved.master_linkage_id, age_category)
+    cached = await get_cached(cache_key)
+    cached_hit = cached is not None
+
+    if cached_hit:
+        info = cached
+    else:
+        info = label_svc.get_population_info(resolved.combined_clean_jsonb or {}, age)
+        await set_cached(cache_key, info, ttl=settings.CACHE_TTL)
+
+    source = info.get("source")
+    data = PopulationInfoData(
+        population_category=info["population_category"],
+        age=age,
+        text=info.get("text"),
+        table=info.get("table"),
+        subsections=info.get("subsections"),
     )
-
-
-@router.get("/drug/{drug_id_1mg}/pediatric-use")
-async def get_pediatric_use(drug_id_1mg: str, request: Request):
-    return await _label_endpoint(
-        drug_id_1mg, "pediatric_use", label_svc.get_pediatric_use, request
+    duration_ms = round((time.perf_counter() - start) * 1000, 2)
+    return DrugResponse(
+        success=True,
+        drug_id_1mg=drug_id_1mg,
+        generic_name=resolved.generic_name,
+        data=data,
+        meta=MetaResponse(source=source, cached=cached_hit, response_time_ms=duration_ms),
     )
 
 

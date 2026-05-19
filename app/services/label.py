@@ -131,22 +131,36 @@ def get_indications(jsonb: dict) -> dict:
     return result
 
 
-def get_geriatric_use(jsonb: dict) -> dict:
-    section = _safe_get(jsonb, "openfda", "population_specific", "geriatric_use")
-    result = _extract_rich(section)
-    if not _has_content(result):
-        dm_section = _safe_get(jsonb, "dailymed", "population_specific", "geriatric_use")
-        result = _extract_dailymed(dm_section)
-    return result
-
-
-def get_pediatric_use(jsonb: dict) -> dict:
-    section = _safe_get(jsonb, "openfda", "population_specific", "pediatric_use")
-    result = _extract_rich(section)
-    if not _has_content(result):
-        dm_section = _safe_get(jsonb, "dailymed", "population_specific", "pediatric_use")
-        result = _extract_dailymed(dm_section)
-    return result
+def get_population_info(jsonb: dict, age: int) -> dict:
+    if age < 18:
+        category = "pediatric"
+        section = _safe_get(jsonb, "openfda", "population_specific", "pediatric_use")
+        result = _extract_rich(section)
+        source = "openfda"
+        if not _has_content(result):
+            dm_section = _safe_get(jsonb, "dailymed", "population_specific", "pediatric_use")
+            result = _extract_dailymed(dm_section)
+            source = "dailymed" if _has_content(result) else None
+    elif age >= 65:
+        category = "geriatric"
+        section = _safe_get(jsonb, "openfda", "population_specific", "geriatric_use")
+        result = _extract_rich(section)
+        source = "openfda"
+        if not _has_content(result):
+            dm_section = _safe_get(jsonb, "dailymed", "population_specific", "geriatric_use")
+            result = _extract_dailymed(dm_section)
+            source = "dailymed" if _has_content(result) else None
+    else:
+        category = "adult"
+        result = {"text": None, "table": None, "subsections": None}
+        source = None
+    return {
+        "population_category": category,
+        "text": result.get("text"),
+        "table": result.get("table"),
+        "subsections": result.get("subsections"),
+        "source": source,
+    }
 
 
 def get_pregnancy_use(jsonb: dict) -> dict:

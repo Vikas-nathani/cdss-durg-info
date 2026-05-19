@@ -3,10 +3,18 @@ from typing import Any, Optional, Dict, List
 
 
 class MetaResponse(BaseModel):
-    source: str
+    source: Optional[str] = None
     cached: bool
     response_time_ms: float
     product_count: Optional[int] = None
+
+
+class PopulationInfoData(BaseModel):
+    population_category: str
+    age: int
+    text: Optional[str] = None
+    table: Optional[List["TableData"]] = None
+    subsections: Optional[List["SubSection"]] = None
 
 
 class DrugResponse(BaseModel):

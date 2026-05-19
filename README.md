@@ -1,6 +1,6 @@
 # cdss-drug-info
 
-Production-grade FastAPI backend serving drug information for Indian medical practitioners via 19 REST API endpoints. Built as the data layer for a Clinical Decision Support System (CDSS).
+Production-grade FastAPI backend serving drug information for Indian medical practitioners via 18 REST API endpoints. Built as the data layer for a Clinical Decision Support System (CDSS).
 
 ---
 
@@ -11,7 +11,7 @@ Production-grade FastAPI backend serving drug information for Indian medical pra
 3. [Low Level Architecture](#3-low-level-architecture)
 4. [Project Structure](#4-project-structure)
 5. [Database Statistics](#5-database-statistics)
-6. [All 19 Endpoints](#6-all-19-endpoints)
+6. [All 18 Endpoints](#6-all-18-endpoints)
 7. [SQL Queries Reference](#7-sql-queries-reference)
 8. [Cache Keys Reference](#8-cache-keys-reference)
 9. [Error Codes Reference](#9-error-codes-reference)
@@ -25,7 +25,7 @@ Production-grade FastAPI backend serving drug information for Indian medical pra
 
 ## 1. Project Overview
 
-**cdss-drug-info** is a production-grade FastAPI backend that exposes drug information for Indian medical practitioners through 18 REST API endpoints.
+**cdss-drug-info** is a production-grade FastAPI backend that exposes drug information for Indian medical practitioners through 18 REST API endpoints. The `/population-info` endpoint replaces the former `/geriatric-use` and `/pediatric-use` endpoints with a single age-aware endpoint.
 
 ### Why Indian brand drugs?
 
@@ -357,7 +357,7 @@ The `combined_clean_jsonb` in `masterlinkage_unique` merges all 4 sources into a
 
 ---
 
-## 6. All 19 Endpoints
+## 6. All 18 Endpoints
 
 All endpoints require the header `X-API-Key: <api_key>`.
 
@@ -378,7 +378,7 @@ All endpoints return the same envelope:
 }
 ```
 
-All 15 label endpoints (contraindications through food-interactions) return `data` with this structure:
+All standard label endpoints (contraindications through food-interactions) return `data` with this structure:
 
 ```json
 {
@@ -741,29 +741,54 @@ curl -H "X-API-Key: your-api-key" \
 
 ---
 
-### Endpoint 10: Geriatric Use
+### Endpoint 10: Population Info
 
 ```
-GET /api/v1/drug/{drug_id_1mg}/geriatric-use
+GET /api/v1/drug/{drug_id_1mg}/population-info?age=<integer>
 ```
 
-**Description:** Returns prescribing guidance for elderly patients.
+**Description:** Returns age-appropriate population prescribing guidance. Accepts the patient's age in years and automatically returns the relevant clinical data — pediatric guidance for children, geriatric guidance for elderly patients, and null data for adults (18–64) where no special population guidance applies.
 
 **Source table:** `drugdb.masterlinkage_unique`
 
-| Path    | Value                                                              |
-|---------|--------------------------------------------------------------------|
-| openFDA | `combined_clean_jsonb → openfda → population_specific → geriatric_use → text` |
-| DailyMed fallback | `combined_clean_jsonb → dailymed → population_specific → geriatric_use → content` |
+**Query parameter:**
 
-**Example request:**
+| Parameter | Type    | Required | Constraints       |
+|-----------|---------|----------|-------------------|
+| `age`     | integer | Yes      | 0 ≤ age ≤ 120     |
+
+**Age to population mapping:**
+
+| Age range | `population_category` | Data returned                |
+|-----------|-----------------------|------------------------------|
+| 0–17      | `pediatric`           | pediatric_use text           |
+| 18–64     | `adult`               | null (no special guidance)   |
+| 65–120    | `geriatric`           | geriatric_use text + table   |
+
+**JSONB paths:**
+
+| Category   | Primary (openFDA)                                                          | Fallback (DailyMed)                                                    |
+|------------|----------------------------------------------------------------------------|------------------------------------------------------------------------|
+| pediatric  | `openfda → population_specific → pediatric_use → text`                     | `dailymed → population_specific → pediatric_use → content`             |
+| geriatric  | `openfda → population_specific → geriatric_use → text/table`               | `dailymed → population_specific → geriatric_use → content`             |
+
+**Example requests:**
 
 ```bash
+# Pediatric (age 5)
 curl -H "X-API-Key: your-api-key" \
-  http://localhost:8000/api/v1/drug/1002775/geriatric-use
+  "http://localhost:8000/api/v1/drug/1002775/population-info?age=5"
+
+# Adult (age 35) — returns null data
+curl -H "X-API-Key: your-api-key" \
+  "http://localhost:8000/api/v1/drug/1002775/population-info?age=35"
+
+# Geriatric (age 70)
+curl -H "X-API-Key: your-api-key" \
+  "http://localhost:8000/api/v1/drug/1002775/population-info?age=70"
 ```
 
-**Example response:**
+**Example response (pediatric):**
 
 ```json
 {
@@ -771,37 +796,17 @@ curl -H "X-API-Key: your-api-key" \
   "drug_id_1mg": "1002775",
   "generic_name": "Clopidogrel bisulfate",
   "data": {
-    "geriatric_use": "Of the total number of subjects in clinical studies of PLAVIX, 45% were 65 and over, and 15% were 75 and over. No overall differences in safety or effectiveness were observed between these subjects and younger subjects..."
+    "population_category": "pediatric",
+    "age": 5,
+    "text": "Safety and effectiveness in pediatric populations have not been established...",
+    "table": null,
+    "subsections": null
   },
-  "meta": { "source": "openfda", "cached": false, "response_time_ms": 39.3 }
+  "meta": { "source": "openfda", "cached": false, "response_time_ms": 105.2 }
 }
 ```
 
----
-
-### Endpoint 11: Pediatric Use
-
-```
-GET /api/v1/drug/{drug_id_1mg}/pediatric-use
-```
-
-**Description:** Returns prescribing guidance for pediatric patients.
-
-**Source table:** `drugdb.masterlinkage_unique`
-
-| Path    | Value                                                             |
-|---------|-------------------------------------------------------------------|
-| openFDA | `combined_clean_jsonb → openfda → population_specific → pediatric_use → text` |
-| DailyMed fallback | `combined_clean_jsonb → dailymed → population_specific → pediatric_use → content` |
-
-**Example request:**
-
-```bash
-curl -H "X-API-Key: your-api-key" \
-  http://localhost:8000/api/v1/drug/1002775/pediatric-use
-```
-
-**Example response:**
+**Example response (adult):**
 
 ```json
 {
@@ -809,15 +814,43 @@ curl -H "X-API-Key: your-api-key" \
   "drug_id_1mg": "1002775",
   "generic_name": "Clopidogrel bisulfate",
   "data": {
-    "pediatric_use": "Safety and effectiveness in pediatric patients have not been established."
+    "population_category": "adult",
+    "age": 35,
+    "text": null,
+    "table": null,
+    "subsections": null
   },
-  "meta": { "source": "openfda", "cached": false, "response_time_ms": 37.9 }
+  "meta": { "source": null, "cached": false, "response_time_ms": 36.8 }
 }
+```
+
+**Example response (geriatric):**
+
+```json
+{
+  "success": true,
+  "drug_id_1mg": "1002775",
+  "generic_name": "Clopidogrel bisulfate",
+  "data": {
+    "population_category": "geriatric",
+    "age": 70,
+    "text": "Of the total number of subjects in the CAPRIE and CURE controlled clinical studies, approximately 50% of patients treated with clopidogrel bisulfate were 65 years of age and older...",
+    "table": null,
+    "subsections": null
+  },
+  "meta": { "source": "openfda", "cached": false, "response_time_ms": 118.6 }
+}
+```
+
+**Validation errors:**
+
+```json
+{ "success": false, "error_code": "INVALID_AGE", "message": "age must be between 0 and 120" }
 ```
 
 ---
 
-### Endpoint 12: Pregnancy Use
+### Endpoint 11: Pregnancy Use
 
 ```
 GET /api/v1/drug/{drug_id_1mg}/pregnancy-use
@@ -855,7 +888,7 @@ curl -H "X-API-Key: your-api-key" \
 
 ---
 
-### Endpoint 13: Specific Populations
+### Endpoint 12: Specific Populations
 
 ```
 GET /api/v1/drug/{drug_id_1mg}/specific-populations
@@ -893,7 +926,7 @@ curl -H "X-API-Key: your-api-key" \
 
 ---
 
-### Endpoint 14: Products
+### Endpoint 13: Products
 
 ```
 GET /api/v1/drug/{drug_id_1mg}/products
@@ -947,7 +980,7 @@ curl -H "X-API-Key: your-api-key" \
 
 ---
 
-### Endpoint 15: Food Interactions
+### Endpoint 14: Food Interactions
 
 ```
 GET /api/v1/drug/{drug_id_1mg}/food-interactions
@@ -984,7 +1017,7 @@ curl -H "X-API-Key: your-api-key" \
 
 ---
 
-### Endpoint 19: Ingredients
+### Endpoint 15: Ingredients
 
 ```
 GET /api/v1/drug/{drug_id_1mg}/ingredients
@@ -1439,8 +1472,9 @@ All TTLs are **86,400 seconds (24 hours)**.
 | `label:adverse_reactions:{master_linkage_id}`    | /adverse-reactions          |
 | `label:drug_description:{master_linkage_id}`     | /drug-description           |
 | `label:indications:{master_linkage_id}`          | /indications                |
-| `label:geriatric_use:{master_linkage_id}`        | /geriatric-use              |
-| `label:pediatric_use:{master_linkage_id}`        | /pediatric-use              |
+| `label:population_info:{master_linkage_id}:pediatric` | /population-info?age=0–17  |
+| `label:population_info:{master_linkage_id}:adult`     | /population-info?age=18–64 |
+| `label:population_info:{master_linkage_id}:geriatric` | /population-info?age=65+   |
 | `label:pregnancy_use:{master_linkage_id}`        | /pregnancy-use              |
 | `label:specific_populations:{master_linkage_id}` | /specific-populations       |
 | `label:products:{master_linkage_id}`             | /products                   |
@@ -1460,6 +1494,7 @@ All TTLs are **86,400 seconds (24 hours)**.
 | `NO_FORMULATION` | 404         | `rxcui` from `indian_brand` not matched in `drugdb.drug`     |
 | `NO_LABEL_DATA`  | 404         | `master_linkage_id` not found in `drugdb.masterlinkage_unique` |
 | `NO_DOSING_DATA` | 404         | No dosing rows for this drug + age_group combination         |
+| `INVALID_AGE`    | 422         | `age` param is outside the 0–120 range                       |
 | `DB_ERROR`       | 500         | Database connection failure or query error                   |
 | `CACHE_ERROR`    | 500         | Redis failure — non-fatal, system falls back to DB           |
 
@@ -1568,7 +1603,7 @@ pytest tests/test_resolver.py -v
 ### Test Results
 
 ```
-63 passed, 3 warnings
+69 passed, 3 warnings
 ```
 
 ---
@@ -1615,13 +1650,17 @@ curl -H "X-API-Key: your-api-key" \
 curl -H "X-API-Key: your-api-key" \
   http://localhost:8000/api/v1/drug/1002775/indications
 
-# Geriatric use
+# Population info — pediatric (age 5)
 curl -H "X-API-Key: your-api-key" \
-  http://localhost:8000/api/v1/drug/1002775/geriatric-use
+  "http://localhost:8000/api/v1/drug/1002775/population-info?age=5"
 
-# Pediatric use
+# Population info — adult (age 35, returns null data)
 curl -H "X-API-Key: your-api-key" \
-  http://localhost:8000/api/v1/drug/1002775/pediatric-use
+  "http://localhost:8000/api/v1/drug/1002775/population-info?age=35"
+
+# Population info — geriatric (age 70)
+curl -H "X-API-Key: your-api-key" \
+  "http://localhost:8000/api/v1/drug/1002775/population-info?age=70"
 
 # Pregnancy use
 curl -H "X-API-Key: your-api-key" \
@@ -1664,7 +1703,7 @@ curl -H "X-API-Key: your-api-key" \
 
 ## 12. What Frontend Needs to Send
 
-### For all 18 endpoints (label + interactions + drug-classes + ingredients):
+### For standard label endpoints (all except population-info, dosing-regimen):
 
 | Item        | Value                                           |
 |-------------|-------------------------------------------------|
@@ -1672,12 +1711,26 @@ curl -H "X-API-Key: your-api-key" \
 | Header      | `X-API-Key: <api_key>`                          |
 | Body        | None                                            |
 
+### For population-info:
+
+| Item         | Value                                                              |
+|--------------|--------------------------------------------------------------------|
+| Path param   | `drug_id_1mg`                                                      |
+| Query param  | `age` — integer, patient age in years (0–120)                      |
+| Header       | `X-API-Key: <api_key>`                                             |
+| Body         | None                                                               |
+
+The backend maps `age` to a `population_category` automatically:
+- 0–17 → `pediatric` (returns pediatric use data)
+- 18–64 → `adult` (returns null data — no special guidance)
+- 65–120 → `geriatric` (returns geriatric use data)
+
 ### For dosing regimen:
 
 | Item         | Value                                                                         |
 |--------------|-------------------------------------------------------------------------------|
 | Path param   | `drug_id_1mg`                                                                 |
-| Query param  | `age_group` — one of: `neonate`, `infant`, `pediatric`, `adolescent`, `adult`, `geriatric`, `any` |
+| Query param  | `age` — float, patient age in years (frontend sends numeric age)              |
 | Header       | `X-API-Key: <api_key>`                                                        |
 | Body         | None                                                                          |
 
