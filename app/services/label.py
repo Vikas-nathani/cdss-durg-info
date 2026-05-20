@@ -27,7 +27,24 @@ def _extract_rich(section) -> dict:
         return {"text": None, "table": None, "subsections": None}
     text_raw = section.get("text")
     if isinstance(text_raw, list):
-        text = "\n".join(str(t) for t in text_raw) if text_raw else None
+        parts = [str(t).strip() for t in text_raw if t]
+        if not parts:
+            text = None
+        elif len(parts) == 1:
+            text = parts[0] or None
+        else:
+            # Multiple list items occur when several product labels (different
+            # manufacturers / formulations) exist for the same drug. Their
+            # warnings are nearly identical but not byte-for-byte equal.
+            # If any two items share the same first 50 chars they are the same
+            # section repeated from different labels → keep the longest one.
+            # If they have distinct openings they are genuinely separate
+            # sections → join them.
+            prefixes = [p[:50] for p in parts]
+            if len(set(prefixes)) < len(parts):
+                text = max(parts, key=len) or None
+            else:
+                text = "\n".join(parts) or None
     elif isinstance(text_raw, str):
         text = text_raw or None
     else:
@@ -198,6 +215,12 @@ def get_products(jsonb: dict) -> list:
     return result
 
 
+def _fi_to_str(item) -> str | None:
+    if isinstance(item, dict):
+        return item.get("text") or item.get("content") or None
+    return str(item) if item is not None else None
+
+
 def get_food_interactions(jsonb: dict) -> dict:
     drugbank = jsonb.get("drugbank")
     if not isinstance(drugbank, list):
@@ -208,12 +231,17 @@ def get_food_interactions(jsonb: dict) -> dict:
             continue
         fi = entry.get("drug_interactions", {}).get("food_interactions")
         if isinstance(fi, list):
-            items.extend(fi)
+            for item in fi:
+                s = _fi_to_str(item)
+                if s:
+                    items.append(s)
         elif fi is not None:
-            items.append(fi)
+            s = _fi_to_str(fi)
+            if s:
+                items.append(s)
     if not items:
         return {"text": None, "table": None, "subsections": None}
-    return {"text": "\n".join(str(i) for i in items), "table": None, "subsections": None}
+    return {"text": "\n".join(items), "table": None, "subsections": None}
 
 
 def get_ingredients(jsonb: dict) -> dict:
