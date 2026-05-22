@@ -15,6 +15,7 @@ class PopulationInfoData(BaseModel):
     text: Optional[str] = None
     table: Optional[List["TableData"]] = None
     subsections: Optional[List["SubSection"]] = None
+    bullets: List[str] = []
 
 
 class DrugResponse(BaseModel):

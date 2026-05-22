@@ -52,13 +52,13 @@ async def resolve_drug(drug_id_1mg: str, pool) -> ResolvedDrug:
 
         logger.info("resolver_step1_ok", drug_id_1mg=drug_id_1mg, rxcui=rxcui)
 
-        # Step 2 — only pick a formulation that has label data in masterlinkage_unique
+        # Step 2 — only pick a formulation that has label data in drug_master_linkage_unique
         row2 = await conn.fetchrow(
             """
             SELECT d.formulation_id, d.master_linkage_id, d.generic_name,
                    m.combined_clean_jsonb, m.generic_name AS ml_generic_name
             FROM drugdb.drug d
-            JOIN drugdb.masterlinkage_unique m USING (master_linkage_id)
+            JOIN drugdb.drug_master_linkage_unique m USING (master_linkage_id)
             WHERE d.rxcui = ANY($1::text[])
             LIMIT 1
             """,

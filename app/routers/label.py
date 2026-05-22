@@ -9,6 +9,7 @@ from app.services.resolver import resolve_drug
 from app.services import label as label_svc
 from app.models.responses import DrugResponse, MetaResponse, ErrorResponse, PopulationInfoData
 from app.exceptions import DrugNotFoundException, NoFormulationException, NoLabelDataException
+from app.utils.text_formatter import split_to_bullets
 
 router = APIRouter(tags=["label"])
 logger = structlog.get_logger(__name__)
@@ -73,6 +74,9 @@ async def _label_endpoint(
         data = extract_fn(resolved.combined_clean_jsonb or {})
         if data is not None:
             await set_cached(cache_key, data, ttl=settings.CACHE_TTL)
+
+    if isinstance(data, dict) and data.get("text"):
+        data["bullets"] = split_to_bullets(data["text"])
 
     duration_ms = round((time.perf_counter() - start) * 1000, 2)
     return DrugResponse(
@@ -196,12 +200,14 @@ async def get_population_info(
         await set_cached(cache_key, info, ttl=settings.CACHE_TTL)
 
     source = info.get("source")
+    text = info.get("text")
     data = PopulationInfoData(
         population_category=info["population_category"],
         age=age,
-        text=info.get("text"),
+        text=text,
         table=info.get("table"),
         subsections=info.get("subsections"),
+        bullets=split_to_bullets(text) if text else [],
     )
     duration_ms = round((time.perf_counter() - start) * 1000, 2)
     return DrugResponse(
