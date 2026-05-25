@@ -21,7 +21,7 @@ class ResolvedDrug:
 
 async def resolve_drug(drug_id_1mg: str, pool) -> ResolvedDrug:
     async with pool.acquire() as conn:
-        # Step 1
+        # Step 1 — prefer quality sources; fall back to any source if not found
         row1 = await conn.fetchrow(
             """
             SELECT ib.rxcui, ib.salt_composition, ib.brand_name
@@ -32,6 +32,17 @@ async def resolve_drug(drug_id_1mg: str, pool) -> ResolvedDrug:
             """,
             drug_id_1mg,
         )
+        if not row1:
+            logger.info("resolver_step1_fallback", drug_id_1mg=drug_id_1mg)
+            row1 = await conn.fetchrow(
+                """
+                SELECT ib.rxcui, ib.salt_composition, ib.brand_name
+                FROM drugdb.indian_brand ib
+                WHERE ib.drug_id_1mg = $1
+                LIMIT 1
+                """,
+                drug_id_1mg,
+            )
         if not row1:
             logger.warning("drug_not_found", drug_id_1mg=drug_id_1mg)
             raise DrugNotFoundException(drug_id_1mg)
@@ -52,7 +63,7 @@ async def resolve_drug(drug_id_1mg: str, pool) -> ResolvedDrug:
 
         logger.info("resolver_step1_ok", drug_id_1mg=drug_id_1mg, rxcui=rxcui)
 
-        # Step 2 — only pick a formulation that has label data in drug_master_linkage_unique
+        # Step 2 — direct rxcui join; fall back to UNII bridge if no formulation found
         row2 = await conn.fetchrow(
             """
             SELECT d.formulation_id, d.master_linkage_id, d.generic_name,
@@ -64,6 +75,30 @@ async def resolve_drug(drug_id_1mg: str, pool) -> ResolvedDrug:
             """,
             rxcui,
         )
+        if not row2 and rxcui:
+            logger.info("resolver_step2_fallback", drug_id_1mg=drug_id_1mg, rxcui=rxcui)
+            row2 = await conn.fetchrow(
+                """
+                WITH ingredient_uniis AS (
+                  SELECT DISTINCT i.unii
+                  FROM drugdb.ingredients i
+                  WHERE i.rxcui = ANY($1::text[])
+                    AND i.unii IS NOT NULL
+                ),
+                linkage AS (
+                  SELECT DISTINCT dml.master_linkage_id
+                  FROM public."DrugMasterLinkage" dml
+                  JOIN ingredient_uniis iu ON iu.unii = ANY(dml.unii_ids)
+                )
+                SELECT d.formulation_id, d.master_linkage_id, d.generic_name,
+                       m.combined_clean_jsonb, m.generic_name AS ml_generic_name
+                FROM drugdb.drug d
+                JOIN drugdb.drug_master_linkage_unique m USING (master_linkage_id)
+                JOIN linkage l ON d.master_linkage_id = l.master_linkage_id
+                LIMIT 1
+                """,
+                rxcui,
+            )
         if not row2:
             logger.warning("no_formulation", drug_id_1mg=drug_id_1mg, rxcui=rxcui)
             raise NoFormulationException(drug_id_1mg)
