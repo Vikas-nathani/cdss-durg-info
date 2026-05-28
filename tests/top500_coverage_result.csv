@@ -1,0 +1,610 @@
+no,brand_name_csv,salt_csv,category,status,match_type,drug_id_1mg,matched_brand,rxcui
+1,Dolo 650,Paracetamol 650mg,Analgesic/Antipyretic,FOUND,prefix,74467,Dolo 650 Tablet,['1148399']
+2,Crocin 500,Paracetamol 500mg,Analgesic/Antipyretic,FOUND,stripped_prefix,90532,Crocin 650mg Tablet,['1148399']
+3,Calpol 500,Paracetamol 500mg,Analgesic/Antipyretic,FOUND,prefix,670754,Calpol 500mg Tablet,['2480095']
+4,Crocin Advance,Paracetamol 500mg,Analgesic/Antipyretic,FOUND,prefix,600468,Crocin Advance 500mg Tablet,['2480095']
+5,Paracip 500,Paracetamol 500mg,Analgesic/Antipyretic,FOUND,prefix,26689,ParaCIP 500 Tablet,['2480095']
+6,Dolopar 650,Paracetamol 650mg,Analgesic/Antipyretic,FOUND,prefix,329440,Dolopar 650 Tablet,['1148399']
+7,Meftal Spas,Mefenamic Acid 250mg + Dicyclomine 10mg,Analgesic/Antispasmodic,FOUND,prefix,926671,Meftal Spas Neo 40mg/ml Drop,['9796']
+8,Meftal P,Mefenamic Acid 100mg/5ml Suspension,Analgesic/Antipyretic,FOUND,prefix,976077,Meftal P 100mg Oral Suspension,['829500']
+9,Combiflam,Ibuprofen 400mg + Paracetamol 325mg,Analgesic/Antipyretic,FOUND,prefix,325414,Combiflam Tablet,['2675760']
+10,Brufen 400,Ibuprofen 400mg,Analgesic/Anti-inflammatory,FOUND,prefix,1002088,Brufen 400 Tablet,['197805']
+11,Voveran 50,Diclofenac Sodium 50mg,Analgesic/Anti-inflammatory,FOUND,exact,9000002,Voveran 50,
+12,Voveran SR 100,Diclofenac Sodium SR 100mg,Analgesic/Anti-inflammatory,FOUND,prefix,144593,Voveran SR 100 Tablet,['855657']
+13,Hifenac P,Aceclofenac 100mg + Paracetamol 325mg,Analgesic/Anti-inflammatory,FOUND,prefix,64892,Hifenac P Tablet,"['161', '16689']"
+14,Aceclo Plus,Aceclofenac 100mg + Paracetamol 325mg,Analgesic/Anti-inflammatory,FOUND,prefix,68674,Aceclo Plus Tablet,"['161', '16689']"
+15,Zerodol P,Aceclofenac 100mg + Paracetamol 325mg,Analgesic/Anti-inflammatory,FOUND,prefix,67304,Zerodol P Tablet,"['161', '16689']"
+16,Zerodol SP,Aceclofenac 100mg + Paracetamol 325mg + Serratiopeptidase 15mg,Analgesic/Anti-inflammatory,FOUND,prefix,143249,Zerodol Spas Tablet,"['16689', '23684']"
+17,Dolokind Plus,Aceclofenac 100mg + Paracetamol 325mg,Analgesic/Anti-inflammatory,FOUND,prefix,509373,Dolokind Plus Tablet,"['161', '16689']"
+18,Nimesulide,Nimesulide 100mg,Analgesic/Anti-inflammatory,FOUND,prefix,449468,Nimesulide Suspension,['53694']
+19,Nise 100,Nimesulide 100mg,Analgesic/Anti-inflammatory,FOUND,contains,489892,Finise 100mg Tablet,['53694']
+20,Nimulid 100,Nimesulide 100mg,Analgesic/Anti-inflammatory,FOUND,stripped_prefix,700350,Nimulid Syrup,['53694']
+21,Ketorol DT,Ketorolac 10mg,Analgesic,FOUND,hyphen_prefix_prefix,338732,Ketorol-DT Tablet,['834022']
+22,Ultracet,Tramadol 37.5mg + Paracetamol 325mg,Analgesic/Opioid,FOUND,prefix,67071,Ultracet Tablet,['836395']
+23,Tramazac,Tramadol 50mg,Analgesic/Opioid,FOUND,prefix,116484,Tramazac Capsule,['835603']
+24,Nucoxia 90,Etoricoxib 90mg,Analgesic/COX-2 inhibitor,FOUND,prefix,495540,Nucoxia 90 Tablet,['307296']
+25,Nucoxia 60,Etoricoxib 60mg,Analgesic/COX-2 inhibitor,FOUND,prefix,496462,Nucoxia 60 Tablet,['307296']
+26,Arcoxia 90,Etoricoxib 90mg,Analgesic/COX-2 inhibitor,FOUND,contains,535515,Sarcoxia 90mg Tablet,['307296']
+27,Celebrex 200,Celecoxib 200mg,Analgesic/COX-2 inhibitor,FOUND,prefix,639982,Celebrex 200mg Capsule,['205323']
+28,Dolonex DT,Piroxicam 20mg,Analgesic/Anti-inflammatory,FOUND,prefix,344363,Dolonex DT 20mg Tablet,['198108']
+29,Naprosyn 500,Naproxen 500mg,Analgesic/Anti-inflammatory,FOUND,prefix,872331,Naprosyn 500 + Tablet,['849431']
+30,Flexon,Ibuprofen 400mg + Paracetamol 325mg,Analgesic/Antipyretic,FOUND,prefix,1030798,Flexon Gel,['1487074']
+31,Augmentin 625,Amoxycillin 500mg + Clavulanic Acid 125mg,Antibiotic,FOUND,prefix,138629,Augmentin 625 Duo Tablet,['617296']
+32,Clavam 625,Amoxycillin 500mg + Clavulanic Acid 125mg,Antibiotic,FOUND,prefix,63841,Clavam 625 Tablet,['617296']
+33,Moxikind CV 625,Amoxycillin 500mg + Clavulanic Acid 125mg,Antibiotic,FOUND,hyphen_prefix,329310,Moxikind-CV 625 Tablet,['617296']
+34,Amoxil 500,Amoxycillin 500mg,Antibiotic,FOUND,prefix,790640,Amoxil 500 Capsule,['308191']
+35,Novamox 500,Amoxycillin 500mg,Antibiotic,FOUND,prefix,121841,Novamox 500 Capsule,['308191']
+36,Azithral 500,Azithromycin 500mg,Antibiotic,FOUND,prefix,325616,Azithral 500 Tablet,['248656']
+37,Azee 500,Azithromycin 500mg,Antibiotic,FOUND,prefix,324155,Azee 500 Tablet,['248656']
+38,Zithromax 500,Azithromycin 500mg,Antibiotic,FOUND,prefix,290832,Zithromax 500mg Tablet,['248656']
+39,Azithrocin 250,Azithromycin 250mg,Antibiotic,FOUND,exact,9000004,Azithrocin 250,
+40,Ciplox 500,Ciprofloxacin 500mg,Antibiotic,FOUND,prefix,56693,cipLOX 500 Tablet,['309309']
+41,Cifran 500,Ciprofloxacin 500mg,Antibiotic,FOUND,prefix,56697,cIFRan 500 Tablet,['309309']
+42,Oflox 200,Ofloxacin 200mg,Antibiotic,FOUND,prefix,158252,OFLox 200 Tablet,['198048']
+43,Zanocin 200,Ofloxacin 200mg,Antibiotic,FOUND,prefix,22903,Zanocin 200 Tablet,['198048']
+44,Levoflox 500,Levofloxacin 500mg,Antibiotic,FOUND,prefix,165440,LEVoflox 500 Tablet,['199885']
+45,Levobact 500,Levofloxacin 500mg,Antibiotic,FOUND,prefix,387753,Levobact 500 Tablet,['199885']
+46,Nuvox 500,Levofloxacin 500mg,Antibiotic,FOUND,exact,9000005,Nuvox 500,
+47,Moxiflox 400,Moxifloxacin 400mg,Antibiotic,FOUND,stripped_prefix,206888,Moxiflox Tablet,['311787']
+48,Avelox 400,Moxifloxacin 400mg,Antibiotic,FOUND,exact,9000006,Avelox 400,
+49,Doxycycline 100,Doxycycline 100mg,Antibiotic,FOUND,contains,702280,Omega Doxycycline 100mg Capsule,['1649988']
+50,Biodoxi 100,Doxycycline 100mg,Antibiotic,FOUND,prefix,6004,Biodoxi 100 Tablet,['1649988']
+51,Cdiff 200,Cefpodoxime 200mg,Antibiotic,MISSING,not_found,,,
+52,Cepodem 200,Cefpodoxime 200mg,Antibiotic,FOUND,prefix,68992,Cepodem 200 Tablet,['309078']
+53,Taxim O 200,Cefixime 200mg,Antibiotic,FOUND,prefix,940602,Taxim O 200mg Dry Syrup,['197451']
+54,Zifi 200,Cefixime 200mg,Antibiotic,FOUND,prefix,51344,Zifi 200 Tablet,['197451']
+55,Ceftas 200,Cefixime 200mg,Antibiotic,FOUND,prefix,51063,Ceftas 200 Tablet,['197451']
+56,Monocef 1g,Ceftriaxone 1g,Antibiotic,FOUND,stripped_prefix,35721,Monocef 2gm Injection,['1665046']
+57,Oframax 1g,Ceftriaxone 1g,Antibiotic,FOUND,stripped_prefix,394298,Oframax XP 1000mg/125mg Injection,"['2193', '37617']"
+58,Taxim 1g,Cefotaxime 1g,Antibiotic,FOUND,contains,280946,Zetaxim 1gm Injection,['2186']
+59,Magnex 1.5g,Cefoperazone 1g + Sulbactam 500mg,Antibiotic,MISSING,not_found,,,
+60,Sulbacin 1.5g,Cefoperazone 1g + Sulbactam 500mg,Antibiotic,MISSING,not_found,,,
+61,Clindac A,Clindamycin 1% Gel,Antibiotic/Topical,FOUND,prefix,652191,Clindac AP Gel,"['197519', '307731']"
+62,Clindamycin 300,Clindamycin 300mg,Antibiotic,FOUND,contains,609296,StayHappi Clindamycin 300mg Tablet,['284215']
+63,Metrogyl 400,Metronidazole 400mg,Antibiotic/Antiprotozoal,FOUND,prefix,982077,MEtrogyl 400 Tablet,['199055']
+64,Flagyl 400,Metronidazole 400mg,Antibiotic/Antiprotozoal,FOUND,prefix,70271,Flagyl 400 Tablet,['199055']
+65,Tiniba 500,Tinidazole 500mg,Antibiotic/Antiprotozoal,FOUND,prefix,116420,TINiBa 500 Tablet,['199519']
+66,Fasigyn 500,Tinidazole 500mg,Antibiotic/Antiprotozoal,FOUND,stripped_prefix,322231,Fasigyn DS 1000mg Tablet,['199519']
+67,Norflox 400,Norfloxacin 400mg,Antibiotic,FOUND,prefix,288267,NORflox 400 Tablet,"['1592255', '7517']"
+68,Norflox TZ,Norfloxacin 400mg + Tinidazole 600mg,Antibiotic/Antiprotozoal,FOUND,hyphen_prefix_prefix,510559,Norflox-TZ RF Tablet,"['10612', '7517']"
+69,Enteroquinol,Clioquinol 250mg,Antibiotic/Intestinal,FOUND,prefix,125504,Enteroquinol 250mg Tablet,
+70,Althrocin 250,Erythromycin 250mg,Antibiotic,FOUND,prefix,7749,Althrocin 250 Tablet,['310154']
+71,Bactrim DS,Trimethoprim 160mg + Sulfamethoxazole 800mg,Antibiotic,FOUND,prefix,120037,Bactrim DS Tablet,['198335']
+72,Septran DS,Trimethoprim 160mg + Sulfamethoxazole 800mg,Antibiotic,FOUND,prefix,175095,Septran DS 800mg/160mg Tablet,['198335']
+73,Doxilin 100,Doxycycline 100mg,Antibiotic,FOUND,prefix,1015721,Doxilin 100 Dry Syrup,['309076']
+74,Meronem 1g,Meropenem 1g,Antibiotic,FOUND,stripped_prefix,17884,MeroNEM Injection,['1722939']
+75,Meromer 1g,Meropenem 1g,Antibiotic,FOUND,stripped_prefix,260243,Meromer 250mg Injection,['1722934']
+76,Imipenem Cilastatin 500,Imipenem 500mg + Cilastatin 500mg,Antibiotic,MISSING,not_found,,,
+77,Vancomycin 500,Vancomycin 500mg,Antibiotic,FOUND,exact,9000008,Vancomycin 500,
+78,Linezolid 600,Linezolid 600mg,Antibiotic,FOUND,prefix,951561,Linezolid 600mg Tablet,['311347']
+79,Lizolid 600,Linezolid 600mg,Antibiotic,FOUND,prefix,229983,Lizolid 600 Tablet,['311347']
+80,Rifampicin 450,Rifampicin 450mg,Anti-tubercular,FOUND,exact,9000009,Rifampicin 450,
+81,Pyrazinamide 750,Pyrazinamide 750mg,Anti-tubercular,FOUND,exact,9000010,Pyrazinamide 750,
+82,Isoniazid 300,Isoniazid 300mg,Anti-tubercular,FOUND,prefix,269050,Isoniazid 300mg Tablet,['197832']
+83,Ethambutol 800,Ethambutol 800mg,Anti-tubercular,FOUND,exact,9000011,Ethambutol 800,
+84,Akurit 4,Rifampicin 75mg+Isoniazid 37.5mg+Pyrazinamide 200mg+Ethambutol 275mg (Paediatric),Anti-tubercular,FOUND,prefix,147003,Akurit 4 Tablet,"['4110', '6038', '8987', '9384']"
+85,Combutol 800,Ethambutol 800mg,Anti-tubercular,FOUND,prefix,8267,Combutol 800 Tablet,['995607']
+86,Cefdinir 300,Cefdinir 300mg,Antibiotic,FOUND,exact,9000012,Cefdinir 300,
+87,Omnicef 300,Cefdinir 300mg,Antibiotic,MISSING,not_found,,,
+88,Doxt-S,Doxycycline 100mg + Serratiopeptidase 10mg,Antibiotic,FOUND,prefix,314492,Doxt-SL Capsule,"['1545992', '1592255']"
+89,Ampiclox,Ampicillin 250mg + Cloxacillin 250mg,Antibiotic,FOUND,prefix,1070381,Ampicloxa 500mg/500mg Injection,"['221058', '2625']"
+90,Fluclox 500,Flucloxacillin 500mg,Antibiotic,FOUND,prefix,1038693,Fluclox 500mg Capsule,['4448']
+91,Fluconazole 150,Fluconazole 150mg,Antifungal,FOUND,contains,615237,DavaIndia Fluconazole 150mg Tablet,['197699']
+92,Forcan 150,Fluconazole 150mg,Antifungal,FOUND,prefix,758908,Forcan 150 Tablet,['197699']
+93,Zocon 150,Fluconazole 150mg,Antifungal,FOUND,prefix,1140079,Zocon 150 Tablet,['197699']
+94,Itraconazole 200,Itraconazole 200mg,Antifungal,FOUND,contains,616940,DavaIndia Itraconazole 200mg Capsule,['311204']
+95,Canditral 200,Itraconazole 200mg,Antifungal,FOUND,prefix,337722,Canditral 200 Capsule,['311204']
+96,Sporanox 100,Itraconazole 100mg,Antifungal,FOUND,exact,9000015,Sporanox 100,
+97,Terbicip 250,Terbinafine 250mg,Antifungal,FOUND,stripped_prefix,159986,Terbicip Cream,['313222']
+98,Lamisil 250,Terbinafine 250mg,Antifungal,FOUND,prefix,769613,Lamisil 250mg Tablet,['313222']
+99,Voritek 200,Voriconazole 200mg,Antifungal,FOUND,prefix,67649,Voritek 200 Tablet,['349434']
+100,Vfend 200,Voriconazole 200mg,Antifungal,FOUND,prefix,237935,Vfend 200mg Tablet,['349434']
+101,Clotrimazole Dusting,Clotrimazole 1% Powder,Antifungal/Topical,FOUND,contains,707504,Trucona-C Clotrimazole Dusting Powder,['309367']
+102,Candid B Cream,Clotrimazole 1% + Beclometasone 0.025% Cream,Antifungal/Topical,FOUND,hyphen_prefix_prefix,663351,Candid-B Cream,"['1348', '2623']"
+103,Zovirax 400,Acyclovir 400mg,Antiviral,FOUND,prefix,40930,Zovirax 400 Tablet,['197311']
+104,Acivir 400,Acyclovir 400mg,Antiviral,FOUND,prefix,701256,Acivir 400mg Syrup,['197311']
+105,Valcivir 500,Valacyclovir 500mg,Antiviral,FOUND,prefix,38006,VALCIvir 500 Tablet,['313565']
+106,Valcivir 1000,Valacyclovir 1000mg,Antiviral,FOUND,prefix,38007,VALCIvir 1000 Tablet,['313564']
+107,Oseltamivir 75,Oseltamivir 75mg,Antiviral,FOUND,exact,9000016,Oseltamivir 75,
+108,Antiflu 75,Oseltamivir 75mg,Antiviral,FOUND,prefix,25089,Antiflu 75mg Capsule,['312122']
+109,Tenofovir 300,Tenofovir Disoproxil Fumarate 300mg,Antiviral/Antiretroviral,FOUND,exact,9000017,Tenofovir 300,
+110,Lamivudine 150,Lamivudine 150mg,Antiviral/Antiretroviral,FOUND,exact,9000018,Lamivudine 150,
+111,Efavirenz 600,Efavirenz 600mg,Antiviral/Antiretroviral,FOUND,prefix,761637,Efavirenz 600mg Tablet,['349477']
+112,Emtriva 200,Emtricitabine 200mg,Antiviral/Antiretroviral,FOUND,exact,9000019,Emtriva 200,
+113,Zentel 400,Albendazole 400mg,Antiparasitic,FOUND,prefix,797930,Zentel 400mg Tablet,['199672']
+114,Bandy 400,Albendazole 400mg,Antiparasitic,FOUND,stripped_prefix,41449,Bandy Suspension,['199672']
+115,Mebex 100,Mebendazole 100mg,Antiparasitic,FOUND,stripped_prefix,17532,Mebex Tablet,['105347']
+116,Ivermectin 12,Ivermectin 12mg,Antiparasitic,FOUND,contains,660746,Elder Ivermectin 12mg Tablet,['199998']
+117,Ivecop 12,Ivermectin 12mg,Antiparasitic,FOUND,prefix,33374,Ivecop 12 Tablet,['199998']
+118,Niclocide 500,Niclosamide 500mg,Antiparasitic,FOUND,exact,9000020,Niclocide 500,
+119,Chloroquine 250,Chloroquine Phosphate 250mg,Antimalarial,FOUND,exact,9000021,Chloroquine 250,
+120,Lariago 250,Chloroquine Phosphate 250mg,Antimalarial,FOUND,prefix,115400,Lariago 250mg Tablet,['1117531']
+121,Primaquine 7.5,Primaquine 7.5mg,Antimalarial,FOUND,exact,9000022,Primaquine 7.5,
+122,Falcimax,Artesunate 50mg + Mefloquine 250mg,Antimalarial,FOUND,prefix,424072,Falcimax 50mg Tablet,['18346']
+123,Coartem,Artemether 20mg + Lumefantrine 120mg,Antimalarial,FOUND,exact,9000023,Coartem,
+124,Malarid,Atovaquone 250mg + Proguanil 100mg,Antimalarial,FOUND,prefix,606936,Malarid 80mg/480mg Tablet,['847731']
+125,Glycomet 500,Metformin 500mg,Antidiabetic,FOUND,prefix,117725,Glycomet 500 SR Tablet,['860975']
+126,Glycomet 850,Metformin 850mg,Antidiabetic,FOUND,prefix,18092,Glycomet 850 Tablet,['861010']
+127,Glycomet 1g,Metformin 1000mg,Antidiabetic,FOUND,prefix,174539,Glycomet 1gm Tablet SR,['861004']
+128,Cetapin 500,Metformin 500mg,Antidiabetic,FOUND,stripped_prefix,619741,Cetapin XR 500mg Tablet,['860975']
+129,Glucophage 500,Metformin 500mg,Antidiabetic,FOUND,exact,9000024,Glucophage 500,
+130,Amaryl 1,Glimepiride 1mg,Antidiabetic,FOUND,prefix,12155,Amaryl 1mg Tablet,['199245']
+131,Amaryl 2,Glimepiride 2mg,Antidiabetic,FOUND,prefix,238268,Amaryl 2mg Tablet,['199246']
+132,Glimestar 2,Glimepiride 2mg,Antidiabetic,FOUND,prefix,11894,Glimestar 2 Tablet,['199246']
+133,Glimy 1,Glimepiride 1mg,Antidiabetic,FOUND,prefix,135461,Glimy 1 Tablet,['199245']
+134,Glycomet GP 1,Glimepiride 1mg + Metformin 500mg,Antidiabetic,FOUND,hyphen_prefix_prefix,70394,Glycomet-GP 1 Tablet PR,"['199245', '860975']"
+135,Glycomet GP 2,Glimepiride 2mg + Metformin 500mg,Antidiabetic,FOUND,hyphen_prefix_prefix,154396,Glycomet-GP 2 Tablet PR,"['199246', '860975']"
+136,Glynase MF 5,Glipizide 5mg + Metformin 500mg,Antidiabetic,FOUND,hyphen_stripped_prefix,64827,GlyNasE-MF Tablet,['861740']
+137,Glipizide 5,Glipizide 5mg,Antidiabetic,FOUND,exact,9000026,Glipizide 5,
+138,Diabenyl 5,Glibenclamide 5mg,Antidiabetic,FOUND,exact,9000027,Diabenyl 5,
+139,Daonil 5,Glibenclamide 5mg,Antidiabetic,FOUND,stripped_prefix,333076,Daonil Tablet,['310537']
+140,Januvia 100,Sitagliptin 100mg,Antidiabetic/DPP-4,FOUND,prefix,32897,Januvia 100mg Tablet,['665033']
+141,Janumet 50/500,Sitagliptin 50mg + Metformin 500mg,Antidiabetic/DPP-4,FOUND,exact,9000028,Janumet 50/500,
+142,Janumet 50/1000,Sitagliptin 50mg + Metformin 1000mg,Antidiabetic/DPP-4,FOUND,prefix_variant,297270,Janumet 1000mg/50mg Tablet,
+143,Galvus 50,Vildagliptin 50mg,Antidiabetic/DPP-4,FOUND,prefix,485431,Galvus 50mg Tablet,['596554']
+144,Galvus Met 50/500,Vildagliptin 50mg + Metformin 500mg,Antidiabetic/DPP-4,FOUND,prefix_variant,477513,Galvus Met 50mg/500mg Tablet,
+145,Onglyza 5,Saxagliptin 5mg,Antidiabetic/DPP-4,FOUND,prefix,198548,Onglyza 5mg Tablet,['858036']
+146,Nesina 25,Alogliptin 25mg,Antidiabetic/DPP-4,FOUND,exact,9000029,Nesina 25,
+147,Jardiance 10,Empagliflozin 10mg,Antidiabetic/SGLT-2,FOUND,prefix,322717,Jardiance 10mg Tablet,['1545658']
+148,Jardiance 25,Empagliflozin 25mg,Antidiabetic/SGLT-2,FOUND,prefix,322816,Jardiance 25mg Tablet,['1545666']
+149,Forxiga 10,Dapagliflozin 10mg,Antidiabetic/SGLT-2,FOUND,prefix,172791,Forxiga 10mg Tablet,['1488569']
+150,Farxiga 10,Dapagliflozin 10mg,Antidiabetic/SGLT-2,FOUND,exact,9000030,Farxiga 10,
+151,Invokana 100,Canagliflozin 100mg,Antidiabetic/SGLT-2,FOUND,exact,9000031,Invokana 100,
+152,Ozempic 0.5,Semaglutide 0.5mg/dose Injection,Antidiabetic/GLP-1,FOUND,stripped_prefix,1089012,Ozempic 1mg Injection,['2553802']
+153,Victoza 1.2,Liraglutide 1.2mg/dose Injection,Antidiabetic/GLP-1,FOUND,stripped_prefix,139334,Victoza Solution for Injection,['897122']
+154,Actos 15,Pioglitazone 15mg,Antidiabetic/TZD,FOUND,stripped_prefix,1055528,Actose 30mg Tablet,['312440']
+155,Pioglit 15,Pioglitazone 15mg,Antidiabetic/TZD,FOUND,prefix,27733,Pioglit 15 Tablet,['317573']
+156,Glitazone MF 15/500,Pioglitazone 15mg + Metformin 500mg,Antidiabetic/TZD,FOUND,exact,9000032,Glitazone MF 15/500,
+157,Mixtard 30,Biphasic Isophane Insulin 30% Soluble + 70% NPH 100IU/ml,Insulin,FOUND,prefix,933108,Mixtard 30 Flexpen (3ml Each),['253182']
+158,Huminsulin 30/70,Biphasic Human Insulin 30/70 100IU/ml,Insulin,FOUND,prefix,173414,HUMINsulin 30/70 Cartridge (3ml Each),['253182']
+159,Lantus,Insulin Glargine 100IU/ml,Insulin/Long-acting,FOUND,prefix,956405,Lantus 100IU/ml Solution for Injection,['311041']
+160,Basalin,Insulin Glargine 100IU/ml,Insulin/Long-acting,FOUND,exact,9000033,Basalin,
+161,Tresiba 100,Insulin Degludec 100IU/ml,Insulin/Ultra long-acting,FOUND,prefix,14563,Tresiba 100IU/ml Flextouch,['1670011']
+162,Novorapid,Insulin Aspart 100IU/ml,Insulin/Rapid-acting,FOUND,prefix,740628,NovoRapid 100IU/ml FlexPen,['311040']
+163,Humalog,Insulin Lispro 100IU/ml,Insulin/Rapid-acting,FOUND,prefix,802668,Humalog 100IU/ml,['242120']
+164,Apidra,Insulin Glulisine 100IU/ml,Insulin/Rapid-acting,FOUND,prefix,324935,Apidra 100IU Cartridge (3ml Each),['485210']
+165,Storvas 10,Atorvastatin 10mg,Cardiovascular/Statin,FOUND,prefix,46532,Storvas 10 Tablet,['617312']
+166,Storvas 20,Atorvastatin 20mg,Cardiovascular/Statin,FOUND,prefix,70629,Storvas 20 Tablet,['617310']
+167,Atorlip 10,Atorvastatin 10mg,Cardiovascular/Statin,FOUND,prefix,68116,ATORlip 10 Tablet,['617312']
+168,Lipitor 20,Atorvastatin 20mg,Cardiovascular/Statin,FOUND,exact,9000034,Lipitor 20,
+169,Tonact 10,Atorvastatin 10mg,Cardiovascular/Statin,FOUND,prefix,72840,TONact 10 Tablet,['617312']
+170,Rosave 10,Rosuvastatin 10mg,Cardiovascular/Statin,FOUND,prefix,482686,ROsave 10 Tablet,['2167557']
+171,Rosave 20,Rosuvastatin 20mg,Cardiovascular/Statin,FOUND,prefix,491744,ROsave 20 Tablet,['2167565']
+172,Crestor 10,Rosuvastatin 10mg,Cardiovascular/Statin,FOUND,prefix,1061545,Crestor 10mg Tablet,['2167557']
+173,Rozucor 10,Rosuvastatin 10mg,Cardiovascular/Statin,FOUND,prefix,337733,Rozucor 10 Tablet,['2167557']
+174,Ecosprin 75,Aspirin 75mg,Cardiovascular/Antiplatelet,FOUND,prefix,40765,Ecosprin 75 Tablet,['308416']
+175,Ecosprin 150,Aspirin 150mg,Cardiovascular/Antiplatelet,FOUND,prefix,40780,Ecosprin 150 Tablet,['1665356']
+176,Aspirin 325,Aspirin 325mg,Cardiovascular/Antiplatelet,FOUND,stripped_prefix,455174,Aspirin 300mg Tablet,['212033']
+177,Plavix 75,Clopidogrel 75mg,Cardiovascular/Antiplatelet,FOUND,stripped_prefix,134976,Plavix Tablet,['309362']
+178,Clopilet 75,Clopidogrel 75mg,Cardiovascular/Antiplatelet,FOUND,stripped_prefix,328244,Clopilet Tablet,['309362']
+179,Deplatt 75,Clopidogrel 75mg,Cardiovascular/Antiplatelet,FOUND,stripped_prefix,329411,Deplatt Tablet,['309362']
+180,Prasita 10,Prasugrel 10mg,Cardiovascular/Antiplatelet,FOUND,prefix,28566,PRAsita 10mg Tablet,['855812']
+181,Effient 10,Prasugrel 10mg,Cardiovascular/Antiplatelet,FOUND,prefix,369544,Effient 10mg Tablet,['855812']
+182,Brilinta 90,Ticagrelor 90mg,Cardiovascular/Antiplatelet,FOUND,prefix,119687,Brilinta 90mg Tablet,['1116635']
+183,Ecosprin AV 75/20,Aspirin 75mg + Atorvastatin 20mg,Cardiovascular,FOUND,prefix,1079067,Ecosprin AV 75/20 Capsule,"['308416', '617310']"
+184,Deplatt A 75,Clopidogrel 75mg + Aspirin 75mg,Cardiovascular/Antiplatelet,FOUND,prefix,328657,Deplatt A 75 Tablet,"['308416', '309362']"
+185,Loprin 150,Aspirin 150mg,Cardiovascular/Antiplatelet,FOUND,exact,9000036,Loprin 150,
+186,Atenolol 25,Atenolol 25mg,Cardiovascular/Beta-blocker,FOUND,contains,607765,Genericart Atenolol 25mg Tablet,['197380']
+187,Atenolol 50,Atenolol 50mg,Cardiovascular/Beta-blocker,FOUND,prefix,943733,Atenolol 50mg Tablet,['197381']
+188,Tenormin 50,Atenolol 50mg,Cardiovascular/Beta-blocker,FOUND,prefix,46156,Tenormin 50 Tablet,['197381']
+189,Metolar XR 25,Metoprolol Succinate 25mg,Cardiovascular/Beta-blocker,FOUND,prefix,297319,MetoLAR XR 25 Capsule,['1999035']
+190,Metolar XR 50,Metoprolol Succinate 50mg,Cardiovascular/Beta-blocker,FOUND,prefix,18479,MetoLAR XR 50 Capsule,['1999037']
+191,Betaloc ZOK 25,Metoprolol Succinate 25mg,Cardiovascular/Beta-blocker,FOUND,stripped_prefix,1118850,betalOC 25mg Tablet,
+192,Carvedilol 6.25,Carvedilol 6.25mg,Cardiovascular/Beta-blocker,FOUND,exact,9000038,Carvedilol 6.25,
+193,Carloc 6.25,Carvedilol 6.25mg,Cardiovascular/Beta-blocker,FOUND,stripped_prefix,49177,Carloc 25 Tablet,['200033']
+194,Bisoprolol 2.5,Bisoprolol 2.5mg,Cardiovascular/Beta-blocker,FOUND,exact,9000039,Bisoprolol 2.5,
+195,Concor 5,Bisoprolol 5mg,Cardiovascular/Beta-blocker,FOUND,prefix,117202,CONcor 5 Tablet,['854905']
+196,Nebicard 5,Nebivolol 5mg,Cardiovascular/Beta-blocker,FOUND,prefix,20141,nEBIcard 5 Tablet,['387013']
+197,Cardivas 3.125,Carvedilol 3.125mg,Cardiovascular/Beta-blocker,FOUND,stripped_prefix,49178,Cardivas 25 Tablet,['200033']
+198,Amlodipine 5,Amlodipine 5mg,Cardiovascular/CCB,FOUND,contains,789082,Danavish Amlodipine 5mg Tablet,['197361']
+199,Amlodipine 10,Amlodipine 10mg,Cardiovascular/CCB,FOUND,contains,608675,StayHappi Amlodipine 10mg Tablet,['308135']
+200,Amlong 5,Amlodipine 5mg,Cardiovascular/CCB,FOUND,contains,31749,S-Amlong 5 Tablet,['2377371']
+201,Norvasc 5,Amlodipine 5mg,Cardiovascular/CCB,FOUND,exact,9000042,Norvasc 5,
+202,Stamlo 5,Amlodipine 5mg,Cardiovascular/CCB,FOUND,prefix,368012,Stamlo 5 Tablet,['197361']
+203,Felodipine 5,Felodipine 5mg,Cardiovascular/CCB,FOUND,exact,9000043,Felodipine 5,
+204,Diltiazem CD 90,Diltiazem 90mg,Cardiovascular/CCB,MISSING,not_found,,,
+205,Dilzem CD 90,Diltiazem 90mg,Cardiovascular/CCB,FOUND,prefix,71384,Dilzem CD 90 Capsule ER,['830869']
+206,Verapamil SR 120,Verapamil 120mg,Cardiovascular/CCB,FOUND,exact,9000044,Verapamil SR 120,
+207,Ramipril 5,Ramipril 5mg,Cardiovascular/ACE Inhibitor,FOUND,contains,615001,DavaIndia Ramipril 5mg Tablet,['198189']
+208,Cardace 5,Ramipril 5mg,Cardiovascular/ACE Inhibitor,FOUND,prefix,422691,Cardace 5 Tablet,['198189']
+209,Hopace 5,Ramipril 5mg,Cardiovascular/ACE Inhibitor,FOUND,prefix,557190,Hopace 5 Tablet,['198189']
+210,Enalapril 5,Enalapril 5mg,Cardiovascular/ACE Inhibitor,FOUND,prefix,761643,Enalapril 5mg Tablet,['858813']
+211,Envas 5,Enalapril 5mg,Cardiovascular/ACE Inhibitor,FOUND,prefix,153400,ENvas 5 Tablet,['858813']
+212,Lisinopril 10,Lisinopril 10mg,Cardiovascular/ACE Inhibitor,FOUND,contains,609031,StayHappi Lisinopril 10mg Tablet,['314076']
+213,Listril 5,Lisinopril 5mg,Cardiovascular/ACE Inhibitor,FOUND,prefix,140992,LIStril 5 Tablet,['311354']
+214,Perindopril 4,Perindopril 4mg,Cardiovascular/ACE Inhibitor,FOUND,exact,9000047,Perindopril 4,
+215,Coversyl 4,Perindopril 4mg,Cardiovascular/ACE Inhibitor,FOUND,prefix,27306,Coversyl 4mg Tablet,['854988']
+216,Losartan 50,Losartan 50mg,Cardiovascular/ARB,FOUND,exact,9000048,Losartan 50,
+217,Losartan 25,Losartan 25mg,Cardiovascular/ARB,FOUND,contains,608717,StayHappi Losartan 25mg Tablet,['979485']
+218,Covance 50,Losartan 50mg,Cardiovascular/ARB,FOUND,prefix,17405,Covance 50 Tablet,['979492']
+219,Repace 50,Losartan 50mg,Cardiovascular/ARB,FOUND,prefix,17400,Repace 50 Tablet,['979492']
+220,Olsar 20,Olmesartan 20mg,Cardiovascular/ARB,FOUND,prefix,325252,OLsar 20 Tablet,['349401']
+221,Olmezest 20,Olmesartan 20mg,Cardiovascular/ARB,FOUND,prefix,23699,OLmezest 20 Tablet,['349401']
+222,Telma 40,Telmisartan 40mg,Cardiovascular/ARB,FOUND,prefix,156977,Telma 40 Tablet,['205304']
+223,Telma 80,Telmisartan 80mg,Cardiovascular/ARB,FOUND,prefix,116361,Telma 80 Tablet,['205305']
+224,Micardis 40,Telmisartan 40mg,Cardiovascular/ARB,FOUND,exact,9000050,Micardis 40,
+225,Arbitel 40,Telmisartan 40mg,Cardiovascular/ARB,FOUND,prefix,849475,Arbitel 40 Tablet,['205304']
+226,Valsartan 80,Valsartan 80mg,Cardiovascular/ARB,FOUND,exact,9000051,Valsartan 80,
+227,Diovan 80,Valsartan 80mg,Cardiovascular/ARB,FOUND,prefix,308647,Diovan 80 Tablet,['349199']
+228,Irbesartan 150,Irbesartan 150mg,Cardiovascular/ARB,FOUND,exact,9000052,Irbesartan 150,
+229,Avapro 150,Irbesartan 150mg,Cardiovascular/ARB,FOUND,contains,1055386,Cavapro 150mg Tablet,['200095']
+230,Hydrochlorothiazide 25,Hydrochlorothiazide 25mg,Cardiovascular/Diuretic,FOUND,exact,9000054,Hydrochlorothiazide 25,
+231,Esidrex 25,Hydrochlorothiazide 25mg,Cardiovascular/Diuretic,MISSING,not_found,,,
+232,Lasix 40,Furosemide 40mg,Cardiovascular/Diuretic,FOUND,prefix,805560,Lasix 40mg/4ml Injection,['197730']
+233,Furosemide 40,Furosemide 40mg,Cardiovascular/Diuretic,FOUND,prefix,820124,Furosemide 40mg Tablet,['313988']
+234,Aldactone 25,Spironolactone 25mg,Cardiovascular/Diuretic,FOUND,stripped_prefix,116839,aldactone Tablet,['313096']
+235,Lasilactone 50,Furosemide 20mg + Spironolactone 50mg,Cardiovascular/Diuretic,FOUND,prefix,65083,Lasilactone 50 Tablet,"['198223', '310429']"
+236,Torsemide 10,Torsemide 10mg,Cardiovascular/Diuretic,FOUND,exact,9000055,Torsemide 10,
+237,Dytor 10,Torsemide 10mg,Cardiovascular/Diuretic,FOUND,prefix,69077,DYtor 10 Tablet,['198369']
+238,Amiodarone 200,Amiodarone 200mg,Cardiovascular/Antiarrhythmic,FOUND,exact,9000056,Amiodarone 200,
+239,Cordarone 200,Amiodarone 200mg,Cardiovascular/Antiarrhythmic,FOUND,stripped_prefix,673035,Cordarone Tablet,['835956']
+240,Digoxin 0.25,Digoxin 0.25mg,Cardiovascular/Cardiac glycoside,FOUND,stripped_prefix,176508,Digoxin 50mcg/ml Elixir,['393245']
+241,Lanoxin 0.25,Digoxin 0.25mg,Cardiovascular/Cardiac glycoside,FOUND,stripped_prefix,452902,LANOXin Syrup,['104208']
+242,Isordil 5,Isosorbide Dinitrate 5mg,Cardiovascular/Nitrate,FOUND,prefix,310677,Isordil 5 Sublingual tablet,['197841']
+243,Nitrocontin 2.6,Nitroglycerine 2.6mg,Cardiovascular/Nitrate,FOUND,exact,9000057,Nitrocontin 2.6,
+244,Nicorandil 5,Nicorandil 5mg,Cardiovascular/Antianginal,FOUND,contains,789289,Danavish Nicorandil 5mg Tablet,['31748']
+245,Ikorel 5,Nicorandil 5mg,Cardiovascular/Antianginal,FOUND,exact,9000059,Ikorel 5,
+246,Trimetazidine 35,Trimetazidine 35mg,Cardiovascular/Antianginal,FOUND,prefix,1078662,Trimetazidine 35mg Tablet,['10826']
+247,Vastarel MR 35,Trimetazidine MR 35mg,Cardiovascular/Antianginal,FOUND,exact,9000060,Vastarel MR 35,
+248,Ranolazine 500,Ranolazine 500mg,Cardiovascular/Antianginal,FOUND,prefix,871946,Ranolazine 500mg Tablet ER,['616749']
+249,Ranexa 500,Ranolazine 500mg,Cardiovascular/Antianginal,FOUND,exact,9000061,Ranexa 500,
+250,Warfarin 5,Warfarin 5mg,Cardiovascular/Anticoagulant,FOUND,exact,9000062,Warfarin 5,
+251,Warf 5,Warfarin 5mg,Cardiovascular/Anticoagulant,FOUND,prefix,541663,Warf 5 Tablet,['855332']
+252,Rivaroxaban 20,Rivaroxaban 20mg,Cardiovascular/Anticoagulant,FOUND,exact,9000063,Rivaroxaban 20,
+253,Xarelto 20,Rivaroxaban 20mg,Cardiovascular/Anticoagulant,FOUND,prefix,320270,Xarelto 20mg Tablet,['1232086']
+254,Apixaban 5,Apixaban 5mg,Cardiovascular/Anticoagulant,FOUND,exact,9000064,Apixaban 5,
+255,Eliquis 5,Apixaban 5mg,Cardiovascular/Anticoagulant,FOUND,prefix,330162,Eliquis 5mg Tablet,['1364445']
+256,Dabigatran 150,Dabigatran 150mg,Cardiovascular/Anticoagulant,FOUND,exact,9000065,Dabigatran 150,
+257,Pradaxa 150,Dabigatran 150mg,Cardiovascular/Anticoagulant,FOUND,prefix,327923,Pradaxa 150mg Capsule,['1037045']
+258,Enoxaparin 40,Enoxaparin 40mg/0.4ml Injection,Cardiovascular/Anticoagulant,FOUND,exact,9000066,Enoxaparin 40,
+259,Clexane 40,Enoxaparin 40mg/0.4ml Injection,Cardiovascular/Anticoagulant,FOUND,exact,9000067,Clexane 40,
+260,Heparin 5000,Heparin 5000IU Injection,Cardiovascular/Anticoagulant,FOUND,stripped_prefix,717050,Heparin 25000IU Injection,['5224']
+261,Ivabradine 5,Ivabradine 5mg,Cardiovascular/If-channel blocker,FOUND,contains,789274,Danavish Ivabradine 5mg Tablet,['1649485']
+262,Procoralan 5,Ivabradine 5mg,Cardiovascular/If-channel blocker,FOUND,exact,9000069,Procoralan 5,
+263,Sacubitril Valsartan 49/51,Sacubitril 49mg + Valsartan 51mg,Cardiovascular/ARNi,FOUND,exact,9000070,Sacubitril Valsartan 49/51,
+264,Vymada 49/51,Sacubitril 49mg + Valsartan 51mg,Cardiovascular/ARNi,FOUND,prefix_variant,560343,Vymada 100mg Tablet,
+265,Fenofibrate 145,Fenofibrate 145mg,Cardiovascular/Fibrate,FOUND,exact,9000071,Fenofibrate 145,
+266,Tricor 145,Fenofibrate 145mg,Cardiovascular/Fibrate,FOUND,generic_name,9000071,Fenofibrate 145,
+267,Ezetimibe 10,Ezetimibe 10mg,Cardiovascular/Lipid-lowering,FOUND,contains,607918,Genericart Atorvastatin+Ezetimibe 10mg/10mg Tablet,['1422086']
+268,Ezedoc 10,Ezetimibe 10mg,Cardiovascular/Lipid-lowering,FOUND,prefix,8794,Ezedoc 10 Tablet,['349556']
+269,Rosuvas EZ 10/10,Rosuvastatin 10mg + Ezetimibe 10mg,Cardiovascular/Lipid-lowering,FOUND,prefix_variant,141443,Rosuvas EZ 10 Tablet,
+270,Pan 40,Pantoprazole 40mg,Gastroenterology/PPI,FOUND,prefix,325250,PAN 40 Tablet,['283669']
+271,Pantocid 40,Pantoprazole 40mg,Gastroenterology/PPI,FOUND,stripped_prefix,332527,Pantocid Tablet,['283669']
+272,Pan-D,Pantoprazole 40mg + Domperidone 10mg,Gastroenterology/PPI,FOUND,prefix,343042,Pan-D Capsule PR,"['3626', '40790']"
+273,Omez 20,Omeprazole 20mg,Gastroenterology/PPI,FOUND,contains,427974,Romez 20mg Tablet,['854868']
+274,Omeprazole 20,Omeprazole 20mg,Gastroenterology/PPI,FOUND,contains,658914,Someprazole 20mg Capsule,['198051']
+275,Losec 20,Omeprazole 20mg,Gastroenterology/PPI,FOUND,contains,1092665,Prilosec 20mg Tablet,['251872']
+276,Nexpro 40,Esomeprazole 40mg,Gastroenterology/PPI,FOUND,prefix,65624,NexPRO 40 Tablet,['486501']
+277,Nexium 40,Esomeprazole 40mg,Gastroenterology/PPI,FOUND,exact,9000075,Nexium 40,
+278,Rablet 20,Rabeprazole 20mg,Gastroenterology/PPI,FOUND,prefix,371801,rABlet 20 Tablet,['854868']
+279,Razo 20,Rabeprazole 20mg,Gastroenterology/PPI,FOUND,prefix,148781,Razo 20 Tablet,['854868']
+280,Razo D,Rabeprazole 20mg + Domperidone 30mg SR,Gastroenterology/PPI,FOUND,contains,603778,Prazo DSR Capsule,"['3626', '40790']"
+281,Lansoprazole 30,Lansoprazole 30mg,Gastroenterology/PPI,FOUND,exact,9000076,Lansoprazole 30,
+282,Lanzol 30,Lansoprazole 30mg,Gastroenterology/PPI,FOUND,prefix,14655,Lanzol 30 Capsule,['311277']
+283,Rantac 150,Ranitidine 150mg,Gastroenterology/H2 blocker,FOUND,prefix,30363,Rantac 150 Tablet,['198190']
+284,Zinetac 150,Ranitidine 150mg,Gastroenterology/H2 blocker,FOUND,prefix,759657,Zinetac 150mg Tablet,['198190']
+285,Famotidine 20,Famotidine 20mg,Gastroenterology/H2 blocker,FOUND,exact,9000077,Famotidine 20,
+286,Pepcid 20,Famotidine 20mg,Gastroenterology/H2 blocker,FOUND,stripped_prefix,1078742,Pepcidin 20mg Tablet,['199739']
+287,Reglan 10,Metoclopramide 10mg,Gastroenterology/Prokinetic,FOUND,prefix,973770,Reglan 10mg Tablet,['311666']
+288,Perinorm 10,Metoclopramide 10mg,Gastroenterology/Prokinetic,FOUND,stripped_prefix,344692,Perinorm Syrup,['311668']
+289,Domstal 10,Domperidone 10mg,Gastroenterology/Prokinetic,FOUND,prefix,70955,Domstal 10mg Tablet,['3626']
+290,Motilium 10,Domperidone 10mg,Gastroenterology/Prokinetic,FOUND,exact,9000078,Motilium 10,
+291,Mosapride 5,Mosapride 5mg,Gastroenterology/Prokinetic,FOUND,exact,9000079,Mosapride 5,
+292,Mosid 5,Mosapride 5mg,Gastroenterology/Prokinetic,FOUND,exact,9000080,Mosid 5,
+293,Duspatalin 135,Mebeverine 135mg,Gastroenterology/Antispasmodic,FOUND,exact,9000081,Duspatalin 135,
+294,Buscopan 10,Hyoscine Butylbromide 10mg,Gastroenterology/Antispasmodic,FOUND,exact,9000082,Buscopan 10,
+295,Drotaverine 80,Drotaverine 80mg,Gastroenterology/Antispasmodic,FOUND,contains,608680,StayHappi Drotaverine 80mg Tablet,['23684']
+296,Drotin 80,Drotaverine 80mg,Gastroenterology/Antispasmodic,FOUND,stripped_prefix,532721,Drotin Tablet,['23684']
+297,Dicyclomine 20,Dicyclomine 20mg,Gastroenterology/Antispasmodic,FOUND,exact,9000084,Dicyclomine 20,
+298,Antacid Syrup,Aluminium Hydroxide + Magnesium Hydroxide Syrup,Gastroenterology/Antacid,FOUND,stripped_prefix,463467,Antacid Tablet,
+299,Digene Syrup,Aluminium Hydroxide 300mg + Magnesium Hydroxide 150mg + Simethicone 50mg,Gastroenterology/Antacid,FOUND,stripped_prefix,1153647,Digene Insta Shots Orange,
+300,Gelusil MPS,Aluminium Hydroxide + Magnesium Trisilicate + Dimethicone Suspension,Gastroenterology/Antacid,FOUND,exact,9000085,Gelusil MPS,
+301,ENO,Sodium Bicarbonate + Citric Acid + Sodium Carbonate Granules,Gastroenterology/Antacid,FOUND,prefix,839770,Enof-OZ Tablet,"['7623', '7701']"
+302,Ondansetron 4,Ondansetron 4mg,Gastroenterology/Antiemetic,FOUND,contains,614925,DavaIndia Ondansetron 4mg Tablet,['104894']
+303,Emeset 4,Ondansetron 4mg,Gastroenterology/Antiemetic,FOUND,prefix,69128,Emeset 4 Tablet,['104894']
+304,Odanset 4,Ondansetron 4mg,Gastroenterology/Antiemetic,FOUND,exact,9000087,Odanset 4,
+305,Granisetron 1,Granisetron 1mg,Gastroenterology/Antiemetic,FOUND,exact,9000088,Granisetron 1,
+306,Kytril 1,Granisetron 1mg,Gastroenterology/Antiemetic,FOUND,exact,9000089,Kytril 1,
+307,Sucralfate 1g,Sucralfate 1g/10ml Suspension,Gastroenterology/Mucoprotective,FOUND,exact,9000090,Sucralfate 1g,
+308,Sucral,Sucralfate 1g/10ml Suspension,Gastroenterology/Mucoprotective,FOUND,prefix,70644,Sucral Cream,['313123']
+309,Loperamide 2,Loperamide 2mg,Gastroenterology/Antidiarrheal,FOUND,contains,849294,Cadila Loperamide 2mg Tablet,['978006']
+310,Imodium 2,Loperamide 2mg,Gastroenterology/Antidiarrheal,FOUND,stripped_prefix,135618,Imodium Capsule,['978006']
+311,Norflox TZ,Norfloxacin 400mg + Tinidazole 600mg,Gastroenterology/Antidiarrheal,FOUND,hyphen_prefix_prefix,510559,Norflox-TZ RF Tablet,"['10612', '7517']"
+312,ORS,Oral Rehydration Salts (WHO formula),Gastroenterology/Rehydration,FOUND,prefix,247888,Orsik Tablet,"['10691', '6693']"
+313,Electrobion,Sodium Chloride + Potassium Chloride + Sodium Citrate + Glucose Sachets,Gastroenterology/Rehydration,FOUND,exact,9000092,Electrobion,
+314,Cremaffin Plus,Liquid Paraffin + Milk of Magnesia + Sodium Picosulphate Suspension,Gastroenterology/Laxative,FOUND,prefix,700368,Cremaffin Plus  Syrup,"['1546457', '243353', '258439']"
+315,Duphalac,Lactulose 10g/15ml Solution,Gastroenterology/Laxative,FOUND,prefix,330894,Duphalac Oral Solution,['391937']
+316,Softovac,Ispaghula Husk + Lactulose + Senna Granules,Gastroenterology/Laxative,FOUND,exact,9000093,Softovac,
+317,Bisacodyl 5,Bisacodyl 5mg,Gastroenterology/Laxative,FOUND,contains,616943,DavaIndia Bisacodyl 5mg Tablet,['308753']
+318,Dulcolax 5,Bisacodyl 5mg,Gastroenterology/Laxative,FOUND,exact,9000095,Dulcolax 5,
+319,Rifaximin 400,Rifaximin 400mg,Gastroenterology/Antibiotic,FOUND,prefix,771521,Rifaximin 400mg Tablet,['856664']
+320,Xifaxan 400,Rifaximin 400mg,Gastroenterology/Antibiotic,FOUND,exact,9000096,Xifaxan 400,
+321,Mesacol 400,Mesalamine 400mg,Gastroenterology/IBD,FOUND,stripped_prefix,505968,Mesacol Tablet DR,
+322,Asacol 400,Mesalamine 400mg,Gastroenterology/IBD,FOUND,exact,9000097,Asacol 400,
+323,Ursodiol 300,Ursodeoxycholic Acid 300mg,Gastroenterology/Hepatoprotective,FOUND,prefix,1091213,Ursodiol 300mg Tablet,['858747']
+324,Urdox 300,Ursodeoxycholic Acid 300mg,Gastroenterology/Hepatoprotective,FOUND,exact,9000098,Urdox 300,
+325,Liv 52 DS,Himsra (Capparis spinosa) + Kasani (Cichorium intybus) Herbal,Gastroenterology/Hepatoprotective,MISSING,not_found,,,
+326,Silymarin 140,Silymarin 140mg,Gastroenterology/Hepatoprotective,FOUND,exact,9000099,Silymarin 140,
+327,Legalon 140,Silymarin 140mg,Gastroenterology/Hepatoprotective,FOUND,exact,9000100,Legalon 140,
+328,Foracort 400,Formoterol 12mcg + Budesonide 400mcg Inhaler,Respiratory,FOUND,prefix,1076597,FORAcort 400 Rotacap,"['19831', '25255']"
+329,Foracort 200,Formoterol 6mcg + Budesonide 200mcg Inhaler,Respiratory,FOUND,prefix,1076595,FORAcort 200 Rotacap,"['19831', '25255']"
+330,Symbicort 160/4.5,Formoterol 4.5mcg + Budesonide 160mcg Inhaler,Respiratory,FOUND,stripped_prefix,370673,Symbicort 320mcg/9mcg Turbuhaler,
+331,Seretide 250,Salmeterol 25mcg + Fluticasone 250mcg Inhaler,Respiratory,FOUND,prefix,60098,Seretide 250 Evohaler,['36117']
+332,Seroflo 250,Salmeterol 25mcg + Fluticasone 250mcg Inhaler,Respiratory,FOUND,prefix,134937,Seroflo 250 Inhaler,['36117']
+333,Asthalin 2.5,Salbutamol 2.5mg/2.5ml Nebulization Solution,Respiratory,FOUND,stripped_prefix,69589,ASTHAlin Syrup,['755497']
+334,Asthalin Inhaler,Salbutamol 100mcg/puff MDI,Respiratory,MISSING,not_found,,,
+335,Ventolin Inhaler,Salbutamol 100mcg/puff MDI,Respiratory,FOUND,exact,9000102,Ventolin Inhaler,
+336,Duolin Respules,Ipratropium 0.5mg + Levosalbutamol 1.25mg Nebulization,Respiratory,FOUND,exact,9000103,Duolin Respules,
+337,Duolin Inhaler,Ipratropium 20mcg + Salbutamol 100mcg Inhaler,Respiratory,FOUND,exact,317274,DUOlin Inhaler,"['1546373', '237159']"
+338,Tiova Rotacap,Tiotropium 18mcg Rotacap,Respiratory/COPD,FOUND,exact,610828,TIova Rotacap,['69120']
+339,Spiriva 18,Tiotropium 18mcg Inhaler,Respiratory/COPD,FOUND,prefix,1001284,Spiriva 18mcg Capsule,['69120']
+340,Ultibro,Glycopyrronium 50mcg + Indacaterol 110mcg Inhaler,Respiratory/COPD,FOUND,exact,9000104,Ultibro,
+341,Anoro Ellipta,Umeclidinium 62.5mcg + Vilanterol 25mcg Inhaler,Respiratory/COPD,FOUND,exact,9000105,Anoro Ellipta,
+342,Budesonide Rotacap 200,Budesonide 200mcg Rotacap,Respiratory,MISSING,not_found,,,
+343,Pulmicort 200,Budesonide 200mcg Turbuhaler,Respiratory,FOUND,exact,9000106,Pulmicort 200,
+344,Montek LC,Montelukast 10mg + Levocetirizine 5mg,Respiratory/Allergy,FOUND,prefix,933957,Montek LC Tablet,"['200224', '855172']"
+345,Montair LC,Montelukast 10mg + Levocetirizine 5mg,Respiratory/Allergy,FOUND,prefix,65438,Montair LC Kid Syrup,"['356887', '88249']"
+346,Montek 10,Montelukast 10mg,Respiratory,FOUND,prefix,176386,Montek 10 Tablet,['200224']
+347,Singulair 10,Montelukast 10mg,Respiratory,FOUND,exact,9000107,Singulair 10,
+348,Theophylline SR 200,Theophylline SR 200mg,Respiratory,FOUND,exact,9000108,Theophylline SR 200,
+349,Deriphyllin Retard,Theophylline 200mg + Etofylline 300mg SR,Respiratory,FOUND,prefix,64064,Deriphyllin Retard 300 Tablet PR,['10438']
+350,Ambroxol 30,Ambroxol 30mg,Respiratory/Mucolytic,FOUND,stripped_prefix,738156,Ambroxol TOS Syrup,"['435', '5032', '625']"
+351,Mucosolvan 30,Ambroxol 30mg,Respiratory/Mucolytic,FOUND,exact,9000109,Mucosolvan 30,
+352,Bromhexine 8,Bromhexine 8mg,Respiratory/Mucolytic,FOUND,stripped_prefix,749579,Bromhexine Elixir,['1753']
+353,Benadryl Cough,Diphenhydramine 14.08mg + Ammonium Chloride 138mg + Sodium Citrate 57.03mg/5ml Syrup,Respiratory/Cough,FOUND,stripped_prefix,114690,Benadryl Syrup,
+354,Alex Syrup,Chlorpheniramine 2mg + Dextromethorphan 10mg + Phenylephrine 5mg/5ml,Respiratory/Cough,FOUND,exact,63175,Alex Syrup,"['236146', '8163']"
+355,Koflet Syrup,Adulsa + Tulsi + Yashthimadhu Herbal Syrup,Respiratory/Cough,MISSING,not_found,,,
+356,Dextromethorphan 10,Dextromethorphan 10mg,Respiratory/Cough,FOUND,exact,9000110,Dextromethorphan 10,
+357,Codeine Linctus,Codeine Phosphate 10mg/5ml Syrup,Respiratory/Cough,FOUND,exact,9000111,Codeine Linctus,
+358,Levolin 1.25,Levosalbutamol 1.25mg/2.5ml Nebulization,Respiratory,FOUND,stripped_prefix,1110541,Levolin 1 Tablet,['237159']
+359,Phenytoin 100,Phenytoin 100mg,Neurology/Antiepileptic,FOUND,exact,9000112,Phenytoin 100,
+360,Eptoin 100,Phenytoin 100mg,Neurology/Antiepileptic,FOUND,stripped_prefix,240851,EPToin Injection,['1313112']
+361,Carbamazepine 200,Carbamazepine 200mg,Neurology/Antiepileptic,FOUND,exact,9000113,Carbamazepine 200,
+362,Tegretol 200,Carbamazepine 200mg,Neurology/Antiepileptic,FOUND,stripped_prefix,541707,Tegretol 300mg Tablet,['200131']
+363,Valproate 500,Sodium Valproate 500mg,Neurology/Antiepileptic,FOUND,exact,9000114,Valproate 500,
+364,Valparin CR 500,Sodium Valproate CR 500mg,Neurology/Antiepileptic,FOUND,stripped_prefix,765408,Valparin Chrono 500 Tablet CR,
+365,Encorate 500,Sodium Valproate 500mg,Neurology/Antiepileptic,FOUND,prefix,5144,Encorate 500 Tablet,['1099648']
+366,Lamitor 25,Lamotrigine 25mg,Neurology/Antiepileptic,FOUND,stripped_prefix,534880,Lamitor DT 25 Tablet,['198430']
+367,Lamictal 25,Lamotrigine 25mg,Neurology/Antiepileptic,FOUND,prefix,735978,Lamictal 25mg Tablet,['198430']
+368,Levetiracetam 500,Levetiracetam 500mg,Neurology/Antiepileptic,FOUND,prefix,1075916,Levetiracetam 500mg Tablet,['311289']
+369,Levipil 500,Levetiracetam 500mg,Neurology/Antiepileptic,FOUND,prefix,774525,LEvipil 500 Tablet,['311289']
+370,Keppra 500,Levetiracetam 500mg,Neurology/Antiepileptic,FOUND,prefix,15052,Keppra 500mg Tablet,['311289']
+371,Topamax 25,Topiramate 25mg,Neurology/Antiepileptic,FOUND,exact,9000115,Topamax 25,
+372,Topamac 25,Topiramate 25mg,Neurology/Antiepileptic,FOUND,prefix,37096,TOPAmac 25mg Tablet,['199888']
+373,Clonazepam 0.5,Clonazepam 0.5mg,Neurology/Antiepileptic,FOUND,exact,9000116,Clonazepam 0.5,
+374,Rivotril 0.5,Clonazepam 0.5mg,Neurology/Antiepileptic,FOUND,stripped_prefix,491742,Rivotril 2mg Tablet,['197529']
+375,Gabapentin 300,Gabapentin 300mg,Neurology/Neuropathic pain,FOUND,contains,609318,StayHappi Gabapentin 300mg Tablet,['310431']
+376,Gabapin 300,Gabapentin 300mg,Neurology/Neuropathic pain,FOUND,prefix,352103,Gabapin 300 Capsule,['310431']
+377,Pregabalin 75,Pregabalin 75mg,Neurology/Neuropathic pain,FOUND,contains,595813,StayHappi Pregabalin 75mg Capsule,['483450']
+378,Lyrica 75,Pregabalin 75mg,Neurology/Neuropathic pain,FOUND,prefix,28679,LYRIca 75mg Capsule,['483450']
+379,Pregalin 75,Pregabalin 75mg,Neurology/Neuropathic pain,FOUND,prefix,146800,preGAlin 75 Capsule,['483450']
+380,Sumatriptan 50,Sumatriptan 50mg,Neurology/Migraine,FOUND,exact,9000119,Sumatriptan 50,
+381,Suminat 50,Sumatriptan 50mg,Neurology/Migraine,FOUND,prefix,70659,Suminat 50 Tablet,['313161']
+382,Rizatriptan 10,Rizatriptan 10mg,Neurology/Migraine,FOUND,exact,9000120,Rizatriptan 10,
+383,Rizact 10,Rizatriptan 10mg,Neurology/Migraine,FOUND,prefix,31001,RIZact 10 Tablet,['312837']
+384,Syndopa 110,Levodopa 100mg + Carbidopa 10mg,Neurology/Parkinson,FOUND,prefix,614504,Syndopa 110 Tablet,['197443']
+385,Sinemet 110,Levodopa 100mg + Carbidopa 10mg,Neurology/Parkinson,FOUND,exact,9000121,Sinemet 110,
+386,Pramipex 0.5,Pramipexole 0.5mg,Neurology/Parkinson,FOUND,stripped_prefix,28547,Pramipex 1 Tablet,['859052']
+387,Mirapex 0.5,Pramipexole 0.5mg,Neurology/Parkinson,FOUND,stripped_prefix,543250,Mirapex 3mg Tablet ER,['901555']
+388,Donecept 5,Donepezil 5mg,Neurology/Dementia,FOUND,exact,9000122,Donecept 5,
+389,Aricept 5,Donepezil 5mg,Neurology/Dementia,FOUND,exact,9000123,Aricept 5,
+390,Rivastigmine 1.5,Rivastigmine 1.5mg,Neurology/Dementia,FOUND,exact,9000124,Rivastigmine 1.5,
+391,Exelon 1.5,Rivastigmine 1.5mg,Neurology/Dementia,FOUND,stripped_prefix,321125,Exelon Patch 10,['312836']
+392,Memantine 5,Memantine 5mg,Neurology/Dementia,FOUND,exact,9000125,Memantine 5,
+393,Admenta 5,Memantine 5mg,Neurology/Dementia,FOUND,prefix,17666,Admenta 5 Tablet,['996571']
+394,Diazepam 5,Diazepam 5mg,Neurology/Anxiolytic,FOUND,contains,796054,Idiazepam 5mg Injection,['197591']
+395,Calmpose 5,Diazepam 5mg,Neurology/Anxiolytic,FOUND,stripped_prefix,296348,Calmpose 10mg Injection,['197589']
+396,Lorazepam 1,Lorazepam 1mg,Neurology/Anxiolytic,FOUND,contains,608924,StayHappi Lorazepam 1mg Tablet,['197901']
+397,Ativan 1,Lorazepam 1mg,Neurology/Anxiolytic,FOUND,prefix,322827,Ativan 1mg Tablet,['197901']
+398,Alprazolam 0.25,Alprazolam 0.25mg,Psychiatry/Anxiolytic,FOUND,exact,9000128,Alprazolam 0.25,
+399,Alprax 0.25,Alprazolam 0.25mg,Psychiatry/Anxiolytic,FOUND,stripped_prefix,700616,Alprax 1mg Tablet SR,['197321']
+400,Etizolam 0.5,Etizolam 0.5mg,Psychiatry/Anxiolytic,FOUND,exact,9000129,Etizolam 0.5,
+401,Etizest 0.5,Etizolam 0.5mg,Psychiatry/Anxiolytic,FOUND,stripped_prefix,621607,Etizest 1 Tablet,
+402,Zolpidem 10,Zolpidem 10mg,Neurology/Hypnotic,FOUND,exact,9000130,Zolpidem 10,
+403,Ambien 10,Zolpidem 10mg,Neurology/Hypnotic,FOUND,exact,9000131,Ambien 10,
+404,Nitrazepam 5,Nitrazepam 5mg,Neurology/Hypnotic,FOUND,exact,9000132,Nitrazepam 5,
+405,Nitrosun 5,Nitrazepam 5mg,Neurology/Hypnotic,FOUND,prefix,21298,Nitrosun 5mg Tablet,['7440']
+406,Fluoxetine 20,Fluoxetine 20mg,Psychiatry/SSRI,FOUND,contains,608676,StayHappi Fluoxetine 20mg Capsule,['248642']
+407,Fludac 20,Fluoxetine 20mg,Psychiatry/SSRI,FOUND,stripped_prefix,110605,Fludac Capsule,['248642']
+408,Prozac 20,Fluoxetine 20mg,Psychiatry/SSRI,MISSING,not_found,,,
+409,Sertraline 50,Sertraline 50mg,Psychiatry/SSRI,FOUND,contains,702486,DR Best Sertraline 50mg Tablet,['312941']
+410,Zoloft 50,Sertraline 50mg,Psychiatry/SSRI,FOUND,stripped_prefix,464751,Zoloft 100mg Tablet,['312938']
+411,Serta 50,Sertraline 50mg,Psychiatry/SSRI,FOUND,prefix,324102,SErta 50 Tablet,['312941']
+412,Escitalopram 10,Escitalopram 10mg,Psychiatry/SSRI,FOUND,contains,607887,Genericart Escitalopram 10mg Tablet,['349332']
+413,Nexito 10,Escitalopram 10mg,Psychiatry/SSRI,FOUND,prefix,1097218,NexITO 10 Tablet,['349332']
+414,Cipralex 10,Escitalopram 10mg,Psychiatry/SSRI,FOUND,exact,9000136,Cipralex 10,
+415,Paroxetine 20,Paroxetine 20mg,Psychiatry/SSRI,FOUND,stripped_prefix,982152,Paroxetine 25mg Tablet,['1738805']
+416,Paxil 20,Paroxetine 20mg,Psychiatry/SSRI,FOUND,stripped_prefix,604879,Paxilyf CR 25 Tablet,['1738805']
+417,Venlafaxine 75,Venlafaxine 75mg,Psychiatry/SNRI,FOUND,exact,9000137,Venlafaxine 75,
+418,Effexor XR 75,Venlafaxine XR 75mg,Psychiatry/SNRI,FOUND,exact,9000138,Effexor XR 75,
+419,Veniz XR 75,Venlafaxine XR 75mg,Psychiatry/SNRI,FOUND,prefix,38178,Veniz XR 75 Capsule,['313585']
+420,Duloxetine 30,Duloxetine 30mg,Psychiatry/SNRI,FOUND,contains,702471,DR Best Duloxetine 30 Tablet,['596930']
+421,Cymbalta 30,Duloxetine 30mg,Psychiatry/SNRI,FOUND,exact,9000140,Cymbalta 30,
+422,Duzela 30,Duloxetine 30mg,Psychiatry/SNRI,FOUND,prefix,6288,Duzela 30 Capsule DR,['596930']
+423,Amitriptyline 10,Amitriptyline 10mg,Psychiatry/TCA,FOUND,contains,608972,StayHappi Amitriptyline 10mg Tablet,['856783']
+424,Tryptomer 10,Amitriptyline 10mg,Psychiatry/TCA,FOUND,prefix,332265,Tryptomer 10mg Tablet,['856783']
+425,Imipramine 25,Imipramine 25mg,Psychiatry/TCA,FOUND,exact,9000141,Imipramine 25,
+426,Mirtazapine 15,Mirtazapine 15mg,Psychiatry/Antidepressant,FOUND,exact,9000142,Mirtazapine 15,
+427,Mirtaz 15,Mirtazapine 15mg,Psychiatry/Antidepressant,FOUND,prefix,18943,Mirtaz 15 Tablet,['283406']
+428,Bupropion 150,Bupropion 150mg,Psychiatry/Antidepressant,FOUND,exact,9000143,Bupropion 150,
+429,Wellbutrin 150,Bupropion 150mg,Psychiatry/Antidepressant,FOUND,exact,9000144,Wellbutrin 150,
+430,Haloperidol 5,Haloperidol 5mg,Psychiatry/Antipsychotic,FOUND,prefix,688940,Haloperidol 5mg Tablet,['310672']
+431,Serenace 5,Haloperidol 5mg,Psychiatry/Antipsychotic,FOUND,prefix,674296,SEREnace 5 Tablet,['310672']
+432,Olanzapine 5,Olanzapine 5mg,Psychiatry/Antipsychotic,FOUND,contains,608666,StayHappi Olanzapine 5mg Tablet,['312078']
+433,Oleanz 5,Olanzapine 5mg,Psychiatry/Antipsychotic,FOUND,prefix,71050,OleANZ 5 Tablet,['312078']
+434,Oliza 10,Olanzapine 10mg,Psychiatry/Antipsychotic,FOUND,prefix,23632,Oliza 10 Tablet,['312076']
+435,Risperidone 2,Risperidone 2mg,Psychiatry/Antipsychotic,FOUND,contains,615027,DavaIndia Risperidone 2mg Tablet,['312831']
+436,Sizodon 2,Risperidone 2mg,Psychiatry/Antipsychotic,FOUND,prefix,30905,SizoDON 2 Tablet,['312831']
+437,Risperdal 2,Risperidone 2mg,Psychiatry/Antipsychotic,FOUND,prefix,387886,Risperdal 2mg Tablet,['312831']
+438,Quetiapine 25,Quetiapine 25mg,Psychiatry/Antipsychotic,FOUND,contains,608671,StayHappi Quetiapine 25mg Tablet,['312744']
+439,Seroquel 25,Quetiapine 25mg,Psychiatry/Antipsychotic,FOUND,exact,9000148,Seroquel 25,
+440,Petril 25,Quetiapine 25mg,Psychiatry/Antipsychotic,MISSING,not_found,,,
+441,Aripiprazole 10,Aripiprazole 10mg,Psychiatry/Antipsychotic,FOUND,contains,608980,StayHappi Aripiprazole 10mg Tablet,['349545']
+442,Abilify 10,Aripiprazole 10mg,Psychiatry/Antipsychotic,FOUND,exact,9000150,Abilify 10,
+443,Astron 10,Aripiprazole 10mg,Psychiatry/Antipsychotic,FOUND,contains,292255,Gastron 10mg Tablet,['35255']
+444,Clozapine 25,Clozapine 25mg,Psychiatry/Antipsychotic,FOUND,exact,9000151,Clozapine 25,
+445,Sizoril 25,Clozapine 25mg,Psychiatry/Antipsychotic,FOUND,exact,9000152,Sizoril 25,
+446,Lithium 300,Lithium Carbonate 300mg,Psychiatry/Mood stabilizer,FOUND,contains,278926,Lalithium 300mg Tablet,['197889']
+447,Licab 300,Lithium Carbonate 300mg,Psychiatry/Mood stabilizer,FOUND,stripped_prefix,16847,Licab Tablet,['197889']
+448,Sodium Valproate ER 500,Sodium Valproate ER 500mg,Psychiatry/Mood stabilizer,FOUND,first_2_words_prefix_contains,609306,StayHappi Sodium Valproate 200mg Tablet,['1099563']
+449,Propranolol 40,Propranolol 40mg,Psychiatry/Beta-blocker,FOUND,contains,608912,StayHappi Propranolol 40mg Tablet,['856519']
+450,Inderal 40,Propranolol 40mg,Psychiatry/Beta-blocker,FOUND,prefix,342626,IndERAL 40 Tablet,['856519']
+451,Buspirone 10,Buspirone 10mg,Psychiatry/Anxiolytic,FOUND,exact,9000156,Buspirone 10,
+452,Buspar 10,Buspirone 10mg,Psychiatry/Anxiolytic,FOUND,exact,9000157,Buspar 10,
+453,Eltroxin 50,Levothyroxine 50mcg,Thyroid,FOUND,prefix,641335,Eltroxin 50mcg Tablet,['966221']
+454,Thyrox 50,Levothyroxine 50mcg,Thyroid,FOUND,prefix,800113,Thyrox 50 Tablet,['966221']
+455,Eltroxin 100,Levothyroxine 100mcg,Thyroid,FOUND,prefix,617041,Eltroxin 100mcg Tablet,['892246']
+456,Thyrox 100,Levothyroxine 100mcg,Thyroid,FOUND,prefix,801818,Thyrox 100 Tablet,['892246']
+457,Neomercazole 5,Carbimazole 5mg,Thyroid/Antithyroid,FOUND,exact,9000158,Neomercazole 5,
+458,Carbimazole 5,Carbimazole 5mg,Thyroid/Antithyroid,FOUND,exact,9000159,Carbimazole 5,
+459,Propylthiouracil 50,Propylthiouracil 50mg,Thyroid/Antithyroid,MISSING,not_found,,,
+460,Primolut N 5,Norethisterone 5mg,Gynaecology,FOUND,hyphen_stripped_prefix,135958,Primolut-N Tablet,['1000405']
+461,Gestofit 200,Progesterone 200mg Soft Gelatin,Gynaecology,FOUND,prefix,117686,GestoFIT 200 Capsule,['312641']
+462,Susten 200,Progesterone 200mg Vaginal Gel,Gynaecology,FOUND,prefix,6808,SustEN 200 Injection,['312645']
+463,Duphaston 10,Dydrogesterone 10mg,Gynaecology,FOUND,prefix,304755,Duphaston 10mg Tablet,['3706']
+464,Yasmin,Drospirenone 3mg + Ethinyl Estradiol 30mcg,Oral Contraceptive,FOUND,prefix,67264,Yasmin Tablet,['284207']
+465,Loette,Levonorgestrel 100mcg + Ethinyl Estradiol 20mcg,Oral Contraceptive,FOUND,prefix,65157,Loette Tablet,['242297']
+466,Mala-N,Norethindrone 1mg + Ethinyl Estradiol 35mcg,Oral Contraceptive,FOUND,exact,9000160,Mala-N,
+467,Unwanted 72,Levonorgestrel 1.5mg,Emergency Contraceptive,FOUND,hyphen_prefix,191883,Unwanted-72 Levonorgestrel Emergency Contraceptive Tablet,['483325']
+468,iPill,Levonorgestrel 1.5mg,Emergency Contraceptive,FOUND,contains,888662,Cildipill-T Tablet,['73494']
+469,Oxytocin 5IU,Oxytocin 5IU Injection,Gynaecology/Uterotonic,FOUND,stripped_prefix,691748,Oxytocin Injection,['7824']
+470,Syntocinon 5IU,Oxytocin 5IU Injection,Gynaecology/Uterotonic,FOUND,stripped_prefix,330002,Syntocinon Injection,['7824']
+471,Methergine 0.2,Methylergometrine 0.2mg,Gynaecology/Uterotonic,FOUND,exact,9000162,Methergine 0.2,
+472,Misoprostol 200,Misoprostol 200mcg,Gynaecology,FOUND,exact,9000163,Misoprostol 200,
+473,Cytotec 200,Misoprostol 200mcg,Gynaecology,FOUND,exact,9000164,Cytotec 200,
+474,Folic Acid 5,Folic Acid 5mg,Gynaecology/Supplement,FOUND,contains,125627,Folitas Folic Acid 5mg Tablet,['310410']
+475,Duvadilan,Isoxsuprine 10mg,Gynaecology/Tocolytic,FOUND,prefix,33173,Duvadilan Tablet,['1298799']
+476,Flomax 0.4,Tamsulosin 0.4mg,Urology/Alpha-blocker,MISSING,not_found,,,
+477,Urimax 0.4,Tamsulosin 0.4mg,Urology/Alpha-blocker,FOUND,stripped_prefix,887810,Urimax D Tablet MR,['996097']
+478,Rapido 0.4,Tamsulosin 0.4mg,Urology/Alpha-blocker,MISSING,not_found,,,
+479,Alfuzosin 10,Alfuzosin 10mg,Urology/Alpha-blocker,FOUND,contains,609205,StayHappi Alfuzosin 10mg Tablet,['861132']
+480,Xatral 10,Alfuzosin 10mg,Urology/Alpha-blocker,FOUND,generic_name,732906,Alfuzosin Tablet,
+481,Finasteride 5,Finasteride 5mg,Urology/5-alpha reductase,FOUND,contains,609015,StayHappi Finasteride 5mg Tablet,['310346']
+482,Finpecia 1,Finasteride 1mg,Urology/5-alpha reductase,FOUND,stripped_prefix,9222,Finpecia Tablet,['200172']
+483,Sildenafil 50,Sildenafil 50mg,Urology/PDE-5 inhibitor,FOUND,contains,595791,StayHappi Sildenafil 50mg Tablet,['312950']
+484,Manforce 50,Sildenafil 50mg,Urology/PDE-5 inhibitor,FOUND,prefix,125945,Manforce 50mg Tablet,['312950']
+485,Caverta 100,Sildenafil 100mg,Urology/PDE-5 inhibitor,FOUND,prefix,32697,Caverta 100 Tablet,['314229']
+486,Tadalafil 20,Tadalafil 20mg,Urology/PDE-5 inhibitor,FOUND,contains,608752,StayHappi Tadalafil 20mg Tablet,['402019']
+487,Tadalis 20,Tadalafil 20mg,Urology/PDE-5 inhibitor,FOUND,prefix,774080,Tadalis 20mg Tablet,['402019']
+488,Cialis 20,Tadalafil 20mg,Urology/PDE-5 inhibitor,FOUND,exact,9000169,Cialis 20,
+489,Furesem 40,Furosemide 40mg,Urology/Diuretic,FOUND,exact,9000170,Furesem 40,
+490,Solifenacin 5,Solifenacin 5mg,Urology/Anticholinergic,FOUND,prefix,709091,Solifenacin 5 Tablet,['477367']
+491,Vesicare 5,Solifenacin 5mg,Urology/Anticholinergic,FOUND,exact,9000171,Vesicare 5,
+492,Betnovate C Cream,Betamethasone 0.1% + Clioquinol 3% Cream,Dermatology,FOUND,hyphen_prefix_prefix,149634,Betnovate-C Cream,"['1514', '5942']"
+493,Betnovate N Cream,Betamethasone 0.1% + Neomycin 0.5% Cream,Dermatology,FOUND,exact,9000173,Betnovate N Cream,
+494,Betnovate GM Cream,Betamethasone 0.05% + Gentamicin 0.1% + Miconazole 2% Cream,Dermatology,FOUND,hyphen_prefix_prefix,159688,Betnovate-GM Cream,"['1514', '1596450', '6932']"
+495,Candid B Cream,Clotrimazole 1% + Beclometasone 0.025% Cream,Dermatology/Antifungal,FOUND,hyphen_prefix_prefix,663351,Candid-B Cream,"['1348', '2623']"
+496,Momate Cream,Mometasone Furoate 0.1% Cream,Dermatology,FOUND,exact,700131,Momate Cream,['151029']
+497,Elocon Cream,Mometasone Furoate 0.1% Cream,Dermatology,FOUND,exact,381629,Elocon Cream,['108118']
+498,Hydrocortisone 1%,Hydrocortisone 1% Cream,Dermatology,FOUND,exact,9000174,Hydrocortisone 1%,
+499,Fucidin Cream,Fusidic Acid 2% Cream,Dermatology/Antibiotic,FOUND,exact,802622,Fucidin Cream,['113608']
+500,Mupirocin 2%,Mupirocin 2% Ointment,Dermatology/Antibiotic,FOUND,exact,9000175,Mupirocin 2%,
+501,Bactroban 2%,Mupirocin 2% Ointment,Dermatology/Antibiotic,FOUND,exact,9000176,Bactroban 2%,
+502,Retin-A 0.025%,Tretinoin 0.025% Cream,Dermatology/Retinoid,FOUND,exact,9000177,Retin-A 0.025%,
+503,Isotretinoin 20,Isotretinoin 20mg,Dermatology/Retinoid,FOUND,contains,608698,StayHappi Isotretinoin 20mg Capsule,['197844']
+504,Oratane 20,Isotretinoin 20mg,Dermatology/Retinoid,FOUND,exact,9000179,Oratane 20,
+505,Acne Aid,Clindamycin 1% + Benzoyl Peroxide 2.5% Gel,Dermatology,MISSING,not_found,,,
+506,Duac Gel,Clindamycin 1% + Benzoyl Peroxide 5% Gel,Dermatology,MISSING,not_found,,,
+507,Permethrin 5%,Permethrin 5% Cream,Dermatology/Scabicide,FOUND,exact,9000180,Permethrin 5%,
+508,Scabizma 5%,Permethrin 5% Cream,Dermatology/Scabicide,FOUND,stripped_prefix,543008,Scabizma Medicated Soap,['106387']
+509,Lindane 1%,Gamma Benzene Hexachloride 1% Lotion,Dermatology/Scabicide,FOUND,exact,9000181,Lindane 1%,
+510,Calamine Lotion,Calamine 8% + Zinc Oxide 3% Lotion,Dermatology/Soothing,FOUND,contains,546173,Lycalamine Lotion,"['1297880', '3498']"
+511,Tacrolimus 0.1%,Tacrolimus 0.1% Ointment,Dermatology/Immunosuppressant,FOUND,exact,9000183,Tacrolimus 0.1%,
+512,Protopic 0.1%,Tacrolimus 0.1% Ointment,Dermatology/Immunosuppressant,FOUND,exact,9000184,Protopic 0.1%,
+513,Halobetasol 0.05%,Halobetasol 0.05% Cream,Dermatology,FOUND,exact,9000185,Halobetasol 0.05%,
+514,Clobetasol 0.05%,Clobetasol Propionate 0.05% Cream,Dermatology,FOUND,exact,9000186,Clobetasol 0.05%,
+515,Tenovate Cream,Clobetasol Propionate 0.05% Cream,Dermatology,FOUND,exact,193413,TENOvate Cream,['861353']
+516,Timolol 0.5% Eye,Timolol 0.5% Eye Drops,Ophthalmology/Glaucoma,FOUND,exact,9000187,Timolol 0.5% Eye,
+517,Timoptic 0.5%,Timolol 0.5% Eye Drops,Ophthalmology/Glaucoma,FOUND,exact,9000188,Timoptic 0.5%,
+518,Latanoprost 0.005%,Latanoprost 0.005% Eye Drops,Ophthalmology/Glaucoma,FOUND,exact,9000189,Latanoprost 0.005%,
+519,Xalatan 0.005%,Latanoprost 0.005% Eye Drops,Ophthalmology/Glaucoma,FOUND,stripped_prefix,185239,Xalatan Eye Drop,['314072']
+520,Bimatoprost 0.03%,Bimatoprost 0.03% Eye Drops,Ophthalmology/Glaucoma,FOUND,exact,9000190,Bimatoprost 0.03%,
+521,Lumigan 0.03%,Bimatoprost 0.03% Eye Drops,Ophthalmology/Glaucoma,FOUND,exact,9000191,Lumigan 0.03%,
+522,Ciprofloxacin Eye,Ciprofloxacin 0.3% Eye Drops,Ophthalmology/Antibiotic,MISSING,not_found,,,
+523,Moxifloxacin Eye,Moxifloxacin 0.5% Eye Drops,Ophthalmology/Antibiotic,FOUND,contains,609494,StayHappi Ketorolac+Moxifloxacin Eye Drop,"['403818', '860107']"
+524,Vigamox 0.5%,Moxifloxacin 0.5% Eye Drops,Ophthalmology/Antibiotic,FOUND,stripped_prefix,60391,VigaMOX Ophthalmic Solution,
+525,Dexamethasone Eye,Dexamethasone 0.1% Eye Drops,Ophthalmology/Steroid,FOUND,exact,9000193,Dexamethasone Eye,
+526,Maxidex 0.1%,Dexamethasone 0.1% Eye Drops,Ophthalmology/Steroid,FOUND,exact,9000194,Maxidex 0.1%,
+527,Ofloxacin Eye,Ofloxacin 0.3% Eye Drops,Ophthalmology/Antibiotic,FOUND,exact,9000195,Ofloxacin Eye,
+528,Exocin 0.3%,Ofloxacin 0.3% Eye Drops,Ophthalmology/Antibiotic,FOUND,exact,9000196,Exocin 0.3%,
+529,Sodium Chloride Eye,Sodium Chloride 0.9% Eye Drops (Lubricant),Ophthalmology,FOUND,exact,9000197,Sodium Chloride Eye,
+530,Tear Natural,Polyvinyl Alcohol + Povidone Eye Drops,Ophthalmology/Lubricant,MISSING,not_found,,,
+531,Becosules,Vitamin B-Complex + Vitamin C Capsules,Supplement,FOUND,exact,9000198,Becosules,
+532,Neurobion Forte,Vitamin B1 + B6 + B12 Tablets,Supplement,MISSING,not_found,,,
+533,Methylcobalamin 500,Methylcobalamin 500mcg,Supplement,FOUND,exact,9000199,Methylcobalamin 500,
+534,Mecobalamin 500,Methylcobalamin 500mcg,Supplement,FOUND,exact,9000200,Mecobalamin 500,
+535,Nurokind Plus,Methylcobalamin 1500mcg + Niacinamide + Folic Acid,Supplement,FOUND,hyphen_prefix_prefix,176207,Nurokind-Plus RF Capsule,"['202634', '29421', '42954', '6417']"
+536,Vitamin D3 60000IU,Cholecalciferol 60000 IU Sachet,Supplement,MISSING,not_found,,,
+537,Uprise D3,Cholecalciferol 60000 IU Sachet,Supplement,FOUND,hyphen_prefix,918999,Uprise-D3 60K Soft Gelatin Capsule,['245500']
+538,Arachitol 6L,Cholecalciferol 6 Lakh IU/ml Injection,Supplement,FOUND,prefix,323178,Arachitol 6L Injection,['245500']
+539,Calcium Carbonate 500,Calcium Carbonate 500mg + Vitamin D3 200IU,Supplement,FOUND,exact,9000201,Calcium Carbonate 500,
+540,Shelcal 500,Calcium Carbonate 1250mg equivalent Calcium 500mg + Vitamin D3 250IU,Supplement,FOUND,stripped_prefix,189700,Shelcal Syrup,['245500']
+541,Caltrate 600,Calcium Carbonate 1500mg (Calcium 600mg) + Vitamin D3 400IU,Supplement,FOUND,exact,9000202,Caltrate 600,
+542,Ferrous Sulphate 150,Ferrous Sulphate 150mg,Supplement/Iron,MISSING,not_found,,,
+543,Orofer XT,Ferrous Ascorbate 100mg + Folic Acid 1.5mg + Zinc Sulphate 61.8mg,Supplement/Iron,FOUND,prefix,367069,"Orofer XT + Iron Tonic with Ferrous Ascorbate, Folic Acid & Mecobalamin | Suspension Flavour Orange Cool","['11248', '202634', '262150']"
+544,Autrin,Ferrous Fumarate + Folic Acid + Zinc + Vitamin B12,Supplement/Iron,FOUND,prefix,63464,"Autrin Hematinic Capsule with Cyanocobalamin, Iron & Folic Acid","['11248', '202634', '262150']"
+545,Dexorange Capsule,Ferric Ammonium Citrate 160mg + Folic Acid 0.5mg + Cyanocobalamin 7.5mcg,Supplement/Iron,FOUND,exact,9000203,Dexorange Capsule,
+546,Zinc 20,Zinc Sulphate 20mg,Supplement,FOUND,contains,1108460,Microzinc 20mg Tablet DT,['1299928']
+547,Zincovit,Zinc + Multivitamins + Minerals,Supplement,FOUND,exact,9000204,Zincovit,
+548,Evion 400,Vitamin E 400mg,Supplement,FOUND,stripped_prefix,64396,Evion LC | Vitamin E + L-Carnitine Tablet,"['11256', '42955']"
+549,Limcee 500,Vitamin C 500mg,Supplement,FOUND,exact,9000205,Limcee 500,
+550,Thiamine 100,Thiamine 100mg,Supplement,FOUND,exact,9000206,Thiamine 100,
+551,Pyridoxine 40,Pyridoxine 40mg,Supplement,FOUND,exact,9000207,Pyridoxine 40,
+552,Folic Acid 1,Folic Acid 1mg,Supplement,MISSING,not_found,,,
+553,Dexamethasone 0.5,Dexamethasone 0.5mg,Corticosteroid,FOUND,exact,9000208,Dexamethasone 0.5,
+554,Dexona 0.5,Dexamethasone 0.5mg,Corticosteroid,FOUND,stripped_prefix,446158,Dexona Tablet,['197577']
+555,Methylprednisolone 4,Methylprednisolone 4mg,Corticosteroid,FOUND,contains,608016,Genericart Methylprednisolone 4mg Tablet,['259966']
+556,Medrol 4,Methylprednisolone 4mg,Corticosteroid,FOUND,prefix,13108,Medrol 4mg Tablet,['259966']
+557,Solu-Medrol 500,Methylprednisolone 500mg Injection,Corticosteroid,FOUND,prefix,13561,Solu-Medrol 500mg Injection,['1743720']
+558,Prednisolone 5,Prednisolone 5mg,Corticosteroid,FOUND,stripped_prefix,270759,Prednisolone Optho Eye Drop,['8638']
+559,Wysolone 5,Prednisolone 5mg,Corticosteroid,FOUND,prefix,70901,Wysolone 5 Tablet DT,['198142']
+560,Hydrocortisone 100,Hydrocortisone 100mg Injection,Corticosteroid,FOUND,exact,9000210,Hydrocortisone 100,
+561,Efcorlin 100,Hydrocortisone 100mg Injection,Corticosteroid,FOUND,contains,870278,Jefcorlin 100 Injection,['238755']
+562,Fludrocortisone 0.1,Fludrocortisone 0.1mg,Corticosteroid/Mineralocorticoid,FOUND,exact,9000212,Fludrocortisone 0.1,
+563,Florinef 0.1,Fludrocortisone 0.1mg,Corticosteroid/Mineralocorticoid,FOUND,exact,9000213,Florinef 0.1,
+564,Hydroxychloroquine 200,Hydroxychloroquine 200mg,Rheumatology/DMARD,FOUND,contains,615273,DavaIndia Hydroxychloroquine 200mg Tablet,['979092']
+565,HCQS 200,Hydroxychloroquine Sulphate 200mg,Rheumatology/DMARD,FOUND,prefix,330198,HCQS 200 Tablet,['979092']
+566,Methotrexate 2.5,Methotrexate 2.5mg,Rheumatology/DMARD,FOUND,exact,9000215,Methotrexate 2.5,
+567,Folitrax 2.5,Methotrexate 2.5mg,Rheumatology/DMARD,FOUND,stripped_prefix,764117,Folitrax LP Gel,['1655956']
+568,Sulfasalazine 500,Sulfasalazine 500mg,Rheumatology/DMARD,FOUND,contains,615201,DavaIndia Sulfasalazine 500mg Tablet,['198232']
+569,Azathioprine 50,Azathioprine 50mg,Rheumatology/Immunosuppressant,FOUND,prefix,678472,Azathioprine 50mg Tablet,['197388']
+570,Imuran 50,Azathioprine 50mg,Rheumatology/Immunosuppressant,FOUND,exact,9000217,Imuran 50,
+571,Cyclosporine 25,Cyclosporine 25mg,Rheumatology/Immunosuppressant,FOUND,exact,9000218,Cyclosporine 25,
+572,Panimun 25,Cyclosporine 25mg,Rheumatology/Immunosuppressant,FOUND,exact,246497,Panimun Bioral 25mg Capsule,
+573,Tacrolimus 1,Tacrolimus 1mg,Rheumatology/Immunosuppressant,FOUND,exact,9000219,Tacrolimus 1,
+574,Pangraf 1,Tacrolimus 1mg,Rheumatology/Immunosuppressant,FOUND,prefix,35976,Pangraf 1 Capsule,['198377']
+575,Mycophenolate 500,Mycophenolate Mofetil 500mg,Rheumatology/Immunosuppressant,FOUND,exact,9000220,Mycophenolate 500,
+576,Cellcept 500,Mycophenolate Mofetil 500mg,Rheumatology/Immunosuppressant,FOUND,stripped_prefix,329130,cellCEPT 250mg Capsule,['199058']
+577,Colchicine 0.5,Colchicine 0.5mg,Rheumatology/Gout,FOUND,exact,9000221,Colchicine 0.5,
+578,Colcibra 0.5,Colchicine 0.5mg,Rheumatology/Gout,FOUND,exact,9000222,Colcibra 0.5,
+579,Allopurinol 100,Allopurinol 100mg,Rheumatology/Gout,FOUND,contains,614765,DavaIndia Allopurinol 100mg Tablet,['197319']
+580,Zyloric 100,Allopurinol 100mg,Rheumatology/Gout,FOUND,stripped_prefix,41865,Zyloric Tablet,['197319']
+581,Febuxostat 40,Febuxostat 40mg,Rheumatology/Gout,FOUND,contains,595723,StayHappi Febuxostat 40mg Tablet,['834235']
+582,Febuget 40,Febuxostat 40mg,Rheumatology/Gout,FOUND,prefix,649012,Febuget 40 Tablet,['834235']
+583,Tamoxifen 20,Tamoxifen 20mg,Oncology/Hormonal,FOUND,stripped_prefix,813615,Tamoxifen Citrate 20mg Tablet,['313195']
+584,Nolvadex 20,Tamoxifen 20mg,Oncology/Hormonal,FOUND,exact,9000225,Nolvadex 20,
+585,Letrozole 2.5,Letrozole 2.5mg,Oncology/Aromatase inhibitor,FOUND,exact,9000226,Letrozole 2.5,
+586,Femara 2.5,Letrozole 2.5mg,Oncology/Aromatase inhibitor,FOUND,exact,9000227,Femara 2.5,
+587,Anastrozole 1,Anastrozole 1mg,Oncology/Aromatase inhibitor,FOUND,exact,9000228,Anastrozole 1,
+588,Arimidex 1,Anastrozole 1mg,Oncology/Aromatase inhibitor,FOUND,exact,163750,Arimidex 1mg Tablet,['199224']
+589,Imatinib 400,Imatinib 400mg,Oncology/TKI,FOUND,prefix,239507,Imatinib 400 Tablet,['403879']
+590,Gleevec 400,Imatinib 400mg,Oncology/TKI,FOUND,exact,9000229,Gleevec 400,
+591,Capecitabine 500,Capecitabine 500mg,Oncology,FOUND,exact,9000230,Capecitabine 500,
+592,Xeloda 500,Capecitabine 500mg,Oncology,FOUND,prefix,146547,Xeloda 500mg Tablet,['200328']
+593,Ondansetron 8,Ondansetron 8mg,Oncology/Antiemetic,FOUND,exact,9000231,Ondansetron 8,
+594,Zofran 8,Ondansetron 8mg,Oncology/Antiemetic,FOUND,exact,9000232,Zofran 8,
+595,Granisetron 2,Granisetron 2mg,Oncology/Antiemetic,FOUND,exact,9000233,Granisetron 2,
+596,Dexamethasone 4,Dexamethasone 4mg,Oncology/Antiemetic adjunct,FOUND,exact,9000234,Dexamethasone 4,
+597,Sodium Bicarbonate 500,Sodium Bicarbonate 500mg,Nephrology,FOUND,contains,789327,Danavish Sodium Bicarbonate 500mg Tablet,['1868473']
+598,Calcium Acetate 667,Calcium Acetate 667mg,Nephrology/Phosphate binder,MISSING,not_found,,,
+599,Sevelamer 800,Sevelamer Carbonate 800mg,Nephrology/Phosphate binder,FOUND,prefix,694388,Sevelamer 800 Tablet,['749206']
+600,Renvela 800,Sevelamer Carbonate 800mg,Nephrology/Phosphate binder,FOUND,prefix,369584,Renvela 800mg Sachet,['749206']
+601,Erythropoietin 2000,Erythropoietin 2000IU Injection,Nephrology/Anemia,FOUND,exact,9000235,Erythropoietin 2000,
+602,Eprex 4000,Epoetin Alfa 4000IU Injection,Nephrology/Anemia,FOUND,prefix,214342,Eprex 4000 Injection,['240000']
+603,Iron Sucrose 100,Iron Sucrose 100mg/5ml Injection,Nephrology/Anemia,MISSING,not_found,,,
+604,Feronia XT Inj,Iron Sucrose 100mg Injection,Nephrology/Anemia,MISSING,not_found,,,
+605,Hydroxyurea 500,Hydroxyurea 500mg,Haematology,FOUND,exact,9000236,Hydroxyurea 500,
+606,Hydrea 500,Hydroxyurea 500mg,Haematology,FOUND,exact,9000237,Hydrea 500,
+607,Deferoxamine 500,Deferoxamine 500mg Injection,Haematology/Iron chelation,FOUND,exact,9000238,Deferoxamine 500,
+608,Desirox 250,Deferasirox 250mg Dispersible Tablet,Haematology/Iron chelation,FOUND,prefix,962104,Desirox 250mg Tablet,['597770']
+609,Exjade 250,Deferasirox 250mg Dispersible Tablet,Haematology/Iron chelation,FOUND,exact,9000239,Exjade 250,

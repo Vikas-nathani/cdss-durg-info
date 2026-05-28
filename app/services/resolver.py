@@ -79,16 +79,22 @@ async def resolve_drug(drug_id_1mg: str, pool) -> ResolvedDrug:
             logger.info("resolver_step2_fallback", drug_id_1mg=drug_id_1mg, rxcui=rxcui)
             row2 = await conn.fetchrow(
                 """
-                WITH ingredient_uniis AS (
-                  SELECT DISTINCT i.unii
+                WITH resolvable_rxcuis AS (
+                  SELECT DISTINCT i.rxcui, dml.master_linkage_id
                   FROM drugdb.ingredients i
+                  JOIN public."DrugMasterLinkage" dml ON dml.unii_ids @> ARRAY[i.unii::text]
                   WHERE i.rxcui = ANY($1::text[])
                     AND i.unii IS NOT NULL
+                    AND array_length(dml.rxcui_ids, 1) = 1
+                ),
+                all_pass_check AS (
+                  SELECT 1
+                  WHERE (SELECT COUNT(DISTINCT rxcui) FROM resolvable_rxcuis) = array_length($1::text[], 1)
                 ),
                 linkage AS (
-                  SELECT DISTINCT dml.master_linkage_id
-                  FROM public."DrugMasterLinkage" dml
-                  JOIN ingredient_uniis iu ON iu.unii = ANY(dml.unii_ids)
+                  SELECT DISTINCT master_linkage_id
+                  FROM resolvable_rxcuis
+                  WHERE EXISTS (SELECT 1 FROM all_pass_check)
                 )
                 SELECT d.formulation_id, d.master_linkage_id, d.generic_name,
                        m.combined_clean_jsonb, m.generic_name AS ml_generic_name
